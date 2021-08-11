@@ -3,7 +3,12 @@ import {
   OnInit,
   ViewEncapsulation,
   ChangeDetectionStrategy,
+  ContentChildren,
+  AfterContentInit,
+  QueryList,
+  ContentChild,
 } from '@angular/core';
+import { PureComponentComponent } from '../pure-component/pure-component.component';
 
 @Component({
   selector: 'app-ng-content-select',
@@ -25,8 +30,13 @@ import {
   encapsulation: ViewEncapsulation.Emulated,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NgContentSelectComponent implements OnInit {
+export class NgContentSelectComponent implements AfterContentInit {
+  @ContentChild(PureComponentComponent)
+  pureComponent!: PureComponentComponent;
+
   constructor() {}
 
-  ngOnInit(): void {}
+  ngAfterContentInit(): void {
+    console.log(this.pureComponent.);
+  }
 }

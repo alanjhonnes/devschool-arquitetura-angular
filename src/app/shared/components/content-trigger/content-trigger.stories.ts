@@ -3,7 +3,7 @@ import { SharedModule } from '../../shared.module';
 import { ContentTriggerComponent } from './content-trigger.component';
 
 export default {
-  title: 'CustomTemplate',
+  title: 'ContentTrigger',
   component: ContentTriggerComponent,
   argTypes: {},
 } as Meta<ContentTriggerComponent>;

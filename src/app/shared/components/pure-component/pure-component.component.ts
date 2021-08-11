@@ -33,7 +33,7 @@ export class PureComponentComponent implements OnInit {
   ngOnInit(): void {
     setInterval(() => {
       this.count += 1;
-      this.changeDetectorRef.markForCheck();
+      // this.changeDetectorRef.markForCheck();
     }, 100);
   }
 

@@ -23,6 +23,7 @@ import { NgContentSelectComponent } from './components/ng-content-select/ng-cont
 import { DynamicComponent } from './components/dynamic/dynamic.component';
 import { CustomTemplateComponent } from './components/custom-template/custom-template.component';
 import { ContentTriggerComponent } from './components/content-trigger/content-trigger.component';
+import { ContentTriggerDirective } from './components/content-trigger/content-trigger.directive';
 
 const sharedModules = [
   CommonModule,
@@ -53,6 +54,7 @@ export const sharedComponents = [
   DynamicComponent,
   CustomTemplateComponent,
   ContentTriggerComponent,
+  ContentTriggerDirective,
 ];
 
 @NgModule({

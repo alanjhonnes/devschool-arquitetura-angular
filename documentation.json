@@ -3,12 +3,12 @@
     "interfaces": [
         {
             "name": "BaseLogInResponse",
-            "id": "interface-BaseLogInResponse-000776f6cf6f72cca56e3c14a23b12f5",
+            "id": "interface-BaseLogInResponse-c7a78445b0649360a786e24e6c13e29b",
             "file": "src/app/shared/services/auth.types.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { User } from '../types/user.type';\r\n\r\nexport interface BaseLogInResponse {\r\n  success: boolean;\r\n}\r\n\r\nexport interface LogInSuccessResponse {\r\n  success: true;\r\n  data: User;\r\n}\r\n\r\nexport interface LogInErrorResponse {\r\n  success: false;\r\n  errors: string[];\r\n}\r\n\r\nexport type LogInResponse = LogInSuccessResponse | LogInErrorResponse;\r\n",
+            "sourceCode": "import { User } from '../types/user.type';\n\nexport interface BaseLogInResponse {\n  success: boolean;\n}\n\nexport interface LogInSuccessResponse {\n  success: true;\n  data: User;\n}\n\nexport interface LogInErrorResponse {\n  success: false;\n  errors: string[];\n}\n\nexport type LogInResponse = LogInSuccessResponse | LogInErrorResponse;\n",
             "properties": [
                 {
                     "name": "success",
@@ -26,12 +26,12 @@
         },
         {
             "name": "Clappable",
-            "id": "interface-Clappable-b1a650a06d7031676461dab771d43c5f",
+            "id": "interface-Clappable-0fee02e74972268319bd851e27b9a906",
             "file": "src/app/shared/mixins/clappable.mixin.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { Constructor } from './constructor.type';\r\nimport {\r\n  EventEmitter,\r\n  Output,\r\n  Input,\r\n  Injectable,\r\n  Directive,\r\n} from '@angular/core';\r\nimport { HasEntityId } from './has-entity-id.type';\r\n\r\nexport interface Clappable {\r\n  claps: number;\r\n\r\n  isClapped: boolean;\r\n\r\n  clap: EventEmitter<string>;\r\n}\r\n\r\nexport type ClappableConstructor = Constructor<Clappable>;\r\n\r\nexport function mixinClappable<T extends Constructor<HasEntityId>>(\r\n  base: T\r\n): ClappableConstructor & T {\r\n  @Directive()\r\n  class BaseClappableClass extends base implements Clappable {\r\n    @Input()\r\n    isClapped!: boolean;\r\n\r\n    @Input()\r\n    claps!: number;\r\n\r\n    @Output()\r\n    clap = new EventEmitter<string>();\r\n\r\n    constructor(...args: any[]) {\r\n      super(...args);\r\n    }\r\n  }\r\n\r\n  return BaseClappableClass;\r\n}\r\n",
+            "sourceCode": "import { Constructor } from './constructor.type';\nimport {\n  EventEmitter,\n  Output,\n  Input,\n  Injectable,\n  Directive,\n} from '@angular/core';\nimport { HasEntityId } from './has-entity-id.type';\n\nexport interface Clappable {\n  claps: number;\n\n  isClapped: boolean;\n\n  clap: EventEmitter<string>;\n}\n\nexport type ClappableConstructor = Constructor<Clappable>;\n\nexport function mixinClappable<T extends Constructor<HasEntityId>>(\n  base: T\n): ClappableConstructor & T {\n  @Directive()\n  class BaseClappableClass extends base implements Clappable {\n    @Input()\n    isClapped!: boolean;\n\n    @Input()\n    claps!: number;\n\n    @Output()\n    clap = new EventEmitter<string>();\n\n    constructor(...args: any[]) {\n      super(...args);\n    }\n  }\n\n  return BaseClappableClass;\n}\n",
             "properties": [
                 {
                     "name": "clap",
@@ -67,12 +67,12 @@
         },
         {
             "name": "ComponentConfig",
-            "id": "interface-ComponentConfig-343e3c3e5304359311bd769c54220eff",
+            "id": "interface-ComponentConfig-1de2ddfec4b60b416aa62a1cf9a34906",
             "file": "src/app/shared/components/configurable/configuration.const.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { InjectionToken } from '@angular/core';\r\n\r\nexport interface ComponentConfig {\r\n  color: string;\r\n  backgroundColor: string;\r\n  borderRadius: string;\r\n}\r\n\r\nexport const CONFIG_TOKEN = new InjectionToken<ComponentConfig>(\r\n  'component_config'\r\n);\r\n\r\nexport const DEFAULT_CONFIG: ComponentConfig = {\r\n  color: 'red',\r\n  backgroundColor: 'black',\r\n  borderRadius: '1rem',\r\n};\r\n",
+            "sourceCode": "import { InjectionToken } from '@angular/core';\n\nexport interface ComponentConfig {\n  color: string;\n  backgroundColor: string;\n  borderRadius: string;\n}\n\nexport const CONFIG_TOKEN = new InjectionToken<ComponentConfig>(\n  'component_config'\n);\n\nexport const DEFAULT_CONFIG: ComponentConfig = {\n  color: 'red',\n  backgroundColor: 'black',\n  borderRadius: '1rem',\n};\n",
             "properties": [
                 {
                     "name": "backgroundColor",
@@ -108,12 +108,12 @@
         },
         {
             "name": "HasEntityId",
-            "id": "interface-HasEntityId-b3a45065d0170a372bf89317d63dc22a",
+            "id": "interface-HasEntityId-608dd60287d0196ec6ccc7ebe02b60d8",
             "file": "src/app/shared/mixins/has-entity-id.type.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface HasEntityId {\r\n  entityId: string;\r\n}\r\n",
+            "sourceCode": "export interface HasEntityId {\n  entityId: string;\n}\n",
             "properties": [
                 {
                     "name": "entityId",
@@ -131,12 +131,12 @@
         },
         {
             "name": "Likeable",
-            "id": "interface-Likeable-578181d28571d662f975915a2779ecf5",
+            "id": "interface-Likeable-6f480942a75b7cfcf947f26703cfd5d5",
             "file": "src/app/shared/mixins/likeable.mixin.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { Constructor } from './constructor.type';\r\nimport {\r\n  EventEmitter,\r\n  Output,\r\n  Input,\r\n  Injectable,\r\n  Directive,\r\n} from '@angular/core';\r\nimport { HasEntityId } from './has-entity-id.type';\r\n\r\nexport interface Likeable {\r\n  isLiked: boolean;\r\n\r\n  likes: number;\r\n\r\n  like: EventEmitter<string>;\r\n\r\n  unlike: EventEmitter<string>;\r\n\r\n  toggleLike(): void;\r\n}\r\n\r\nexport type LikeableConstructor = Constructor<Likeable>;\r\n\r\nexport function mixinLikeable<T extends Constructor<HasEntityId>>(\r\n  base: T\r\n): LikeableConstructor & T {\r\n  @Directive()\r\n  class BaseLikeableClass extends base implements Likeable {\r\n    @Input()\r\n    isLiked!: boolean;\r\n\r\n    @Input()\r\n    likes!: number;\r\n\r\n    @Output()\r\n    like = new EventEmitter<string>();\r\n\r\n    @Output()\r\n    unlike = new EventEmitter<string>();\r\n\r\n    constructor(...args: any[]) {\r\n      super(...args);\r\n    }\r\n\r\n    toggleLike(): void {\r\n      if (this.isLiked) {\r\n        this.unlike.emit(this.entityId);\r\n      } else {\r\n        this.like.emit(this.entityId);\r\n      }\r\n    }\r\n  }\r\n\r\n  return BaseLikeableClass;\r\n}\r\n",
+            "sourceCode": "import { Constructor } from './constructor.type';\nimport {\n  EventEmitter,\n  Output,\n  Input,\n  Injectable,\n  Directive,\n} from '@angular/core';\nimport { HasEntityId } from './has-entity-id.type';\n\nexport interface Likeable {\n  isLiked: boolean;\n\n  likes: number;\n\n  like: EventEmitter<string>;\n\n  unlike: EventEmitter<string>;\n\n  toggleLike(): void;\n}\n\nexport type LikeableConstructor = Constructor<Likeable>;\n\nexport function mixinLikeable<T extends Constructor<HasEntityId>>(\n  base: T\n): LikeableConstructor & T {\n  @Directive()\n  class BaseLikeableClass extends base implements Likeable {\n    @Input()\n    isLiked!: boolean;\n\n    @Input()\n    likes!: number;\n\n    @Output()\n    like = new EventEmitter<string>();\n\n    @Output()\n    unlike = new EventEmitter<string>();\n\n    constructor(...args: any[]) {\n      super(...args);\n    }\n\n    toggleLike(): void {\n      if (this.isLiked) {\n        this.unlike.emit(this.entityId);\n      } else {\n        this.like.emit(this.entityId);\n      }\n    }\n  }\n\n  return BaseLikeableClass;\n}\n",
             "properties": [
                 {
                     "name": "isLiked",
@@ -192,12 +192,12 @@
         },
         {
             "name": "LogInErrorResponse",
-            "id": "interface-LogInErrorResponse-000776f6cf6f72cca56e3c14a23b12f5",
+            "id": "interface-LogInErrorResponse-c7a78445b0649360a786e24e6c13e29b",
             "file": "src/app/shared/services/auth.types.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { User } from '../types/user.type';\r\n\r\nexport interface BaseLogInResponse {\r\n  success: boolean;\r\n}\r\n\r\nexport interface LogInSuccessResponse {\r\n  success: true;\r\n  data: User;\r\n}\r\n\r\nexport interface LogInErrorResponse {\r\n  success: false;\r\n  errors: string[];\r\n}\r\n\r\nexport type LogInResponse = LogInSuccessResponse | LogInErrorResponse;\r\n",
+            "sourceCode": "import { User } from '../types/user.type';\n\nexport interface BaseLogInResponse {\n  success: boolean;\n}\n\nexport interface LogInSuccessResponse {\n  success: true;\n  data: User;\n}\n\nexport interface LogInErrorResponse {\n  success: false;\n  errors: string[];\n}\n\nexport type LogInResponse = LogInSuccessResponse | LogInErrorResponse;\n",
             "properties": [
                 {
                     "name": "errors",
@@ -256,12 +256,12 @@
         },
         {
             "name": "LogInInput",
-            "id": "interface-LogInInput-54891185490e5893a1abf389119dbb28",
+            "id": "interface-LogInInput-508cd1c9e76d7288835c3b32cfc71a27",
             "file": "src/app/shared/services/auth.service.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { Injectable } from '@angular/core';\nimport { Observable, of } from 'rxjs';\nimport { delay, tap } from 'rxjs/operators';\nimport { User } from '../types/user.type';\nimport { LogInResponse } from './auth.types';\nimport { UserService } from './user.service';\n\nexport interface LogInInput {\n  email: string;\n  password: string;\n}\n\nexport const accounts: Record<string, User> = {\n  'alan.sa@mjv.com.br': {\n    email: 'alan.sa@mjv.com.br',\n  },\n  'nathan.carlos@mjv.com.br': {\n    email: 'nathan.carlos@mjv.com.br',\n  },\n};\n\n@Injectable({\n  providedIn: 'root',\n})\nexport class AuthService {\n  constructor(private userService: UserService) {}\n\n  logIn(login: LogInInput): Observable<LogInResponse> {\n    const user = accounts[login.email];\n    const response: LogInResponse = user\n      ? {\n          success: true,\n          data: user,\n        }\n      : {\n          success: false,\n          errors: ['Usuário não encontrado.'],\n        };\n    return of(response).pipe(\n      delay(2000),\n      tap((response) => {\n        // if log in is successful, sets current user\n        if (response.success) {\n          this.userService.setCurrentUser(response.data);\n        }\n      })\n    );\n  }\n\n  logOut() {\n    this.userService.setCurrentUser(null);\n  }\n}\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\nimport { Observable, of } from 'rxjs';\nimport { delay, tap } from 'rxjs/operators';\nimport { User } from '../types/user.type';\nimport { LogInResponse } from './auth.types';\nimport { UserService } from './user.service';\n\nexport interface LogInInput {\n  email: string;\n  password: string;\n}\n\nexport const accounts: Record<string, User> = {\n  'alan.sa@mjv.com.br': {\n    email: 'alan.sa@mjv.com.br',\n    name: 'Alan Jhonnes',\n    dashboardSetting: ['progress', 'progress', 'table'],\n  },\n  'nathan.carlos@mjv.com.br': {\n    email: 'nathan.carlos@mjv.com.br',\n    name: 'Nathan Carlos',\n    dashboardSetting: ['table', 'table', 'progress'],\n  },\n};\n\n@Injectable({\n  providedIn: 'root',\n})\nexport class AuthService {\n  constructor(private userService: UserService) {}\n\n  logIn(login: LogInInput): Observable<LogInResponse> {\n    const user = accounts[login.email];\n    const response: LogInResponse = user\n      ? {\n          success: true,\n          data: user,\n        }\n      : {\n          success: false,\n          errors: ['Usuário não encontrado.'],\n        };\n    return of(response).pipe(\n      delay(2000),\n      tap((response) => {\n        // if log in is successful, sets current user\n        if (response.success) {\n          this.userService.setCurrentUser(response.data);\n        }\n      })\n    );\n  }\n\n  logOut() {\n    this.userService.setCurrentUser(null);\n  }\n}\n",
             "properties": [
                 {
                     "name": "email",
@@ -288,12 +288,12 @@
         },
         {
             "name": "LogInSuccessResponse",
-            "id": "interface-LogInSuccessResponse-000776f6cf6f72cca56e3c14a23b12f5",
+            "id": "interface-LogInSuccessResponse-c7a78445b0649360a786e24e6c13e29b",
             "file": "src/app/shared/services/auth.types.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { User } from '../types/user.type';\r\n\r\nexport interface BaseLogInResponse {\r\n  success: boolean;\r\n}\r\n\r\nexport interface LogInSuccessResponse {\r\n  success: true;\r\n  data: User;\r\n}\r\n\r\nexport interface LogInErrorResponse {\r\n  success: false;\r\n  errors: string[];\r\n}\r\n\r\nexport type LogInResponse = LogInSuccessResponse | LogInErrorResponse;\r\n",
+            "sourceCode": "import { User } from '../types/user.type';\n\nexport interface BaseLogInResponse {\n  success: boolean;\n}\n\nexport interface LogInSuccessResponse {\n  success: true;\n  data: User;\n}\n\nexport interface LogInErrorResponse {\n  success: false;\n  errors: string[];\n}\n\nexport type LogInResponse = LogInSuccessResponse | LogInErrorResponse;\n",
             "properties": [
                 {
                     "name": "data",
@@ -351,6 +351,79 @@
             "methods": []
         },
         {
+            "name": "ProgressData",
+            "id": "interface-ProgressData-651d8f84cfa91f66e0c67894175694a1",
+            "file": "src/app/shared/services/reports.service.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { Injectable } from '@angular/core';\nimport { Observable, of } from 'rxjs';\nimport { delay } from 'rxjs/operators';\n\nexport const tableData: TableData[] = [\n  {\n    bool: true,\n    name: 'Alan',\n    rating: 5,\n  },\n  {\n    bool: true,\n    name: 'Nathan',\n    rating: 6,\n  },\n  {\n    bool: true,\n    name: 'Carlos',\n    rating: 7,\n  },\n];\n\nexport interface TableData {\n  name: string;\n  rating: number;\n  bool: boolean;\n}\n\nexport interface ProgressData {\n  primary: number;\n  secondary: number;\n}\n\nexport const progressData: ProgressData = {\n  primary: 100,\n  secondary: 50,\n};\n\n@Injectable({\n  providedIn: 'root',\n})\nexport class ReportsService {\n  getTableData(): Observable<TableData[]> {\n    return of(tableData).pipe(delay(2000));\n  }\n\n  getProgressData(): Observable<ProgressData> {\n    return of(progressData).pipe(delay(2000));\n  }\n}\n",
+            "properties": [
+                {
+                    "name": "primary",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 30
+                },
+                {
+                    "name": "secondary",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 31
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 163,
+            "methods": []
+        },
+        {
+            "name": "TableData",
+            "id": "interface-TableData-651d8f84cfa91f66e0c67894175694a1",
+            "file": "src/app/shared/services/reports.service.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { Injectable } from '@angular/core';\nimport { Observable, of } from 'rxjs';\nimport { delay } from 'rxjs/operators';\n\nexport const tableData: TableData[] = [\n  {\n    bool: true,\n    name: 'Alan',\n    rating: 5,\n  },\n  {\n    bool: true,\n    name: 'Nathan',\n    rating: 6,\n  },\n  {\n    bool: true,\n    name: 'Carlos',\n    rating: 7,\n  },\n];\n\nexport interface TableData {\n  name: string;\n  rating: number;\n  bool: boolean;\n}\n\nexport interface ProgressData {\n  primary: number;\n  secondary: number;\n}\n\nexport const progressData: ProgressData = {\n  primary: 100,\n  secondary: 50,\n};\n\n@Injectable({\n  providedIn: 'root',\n})\nexport class ReportsService {\n  getTableData(): Observable<TableData[]> {\n    return of(tableData).pipe(delay(2000));\n  }\n\n  getProgressData(): Observable<ProgressData> {\n    return of(progressData).pipe(delay(2000));\n  }\n}\n",
+            "properties": [
+                {
+                    "name": "bool",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 26
+                },
+                {
+                    "name": "name",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 24
+                },
+                {
+                    "name": "rating",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 25
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 163,
+            "methods": []
+        },
+        {
             "name": "TemplateContext",
             "id": "interface-TemplateContext-f5da68820cab094ab56bd98ac0e49bc5",
             "file": "src/app/shared/components/custom-template/custom-template.component.ts",
@@ -393,13 +466,22 @@
         },
         {
             "name": "User",
-            "id": "interface-User-417400192c2ad6b2669d13ae220467a5",
+            "id": "interface-User-1c2a017e39f6ccefd9b48877f7b62839",
             "file": "src/app/shared/types/user.type.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface User {\r\n  email: string;\r\n}\r\n",
+            "sourceCode": "export interface User {\n  email: string;\n  name: string;\n  dashboardSetting: WidgetTypes[];\n}\n\nexport type WidgetTypes = 'table' | 'progress';\n",
             "properties": [
+                {
+                    "name": "dashboardSetting",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "WidgetTypes[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
                 {
                     "name": "email",
                     "deprecated": false,
@@ -408,6 +490,15 @@
                     "optional": false,
                     "description": "",
                     "line": 2
+                },
+                {
+                    "name": "name",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
                 }
             ],
             "indexSignatures": [],
@@ -418,7 +509,7 @@
     "injectables": [
         {
             "name": "AuthService",
-            "id": "injectable-AuthService-54891185490e5893a1abf389119dbb28",
+            "id": "injectable-AuthService-508cd1c9e76d7288835c3b32cfc71a27",
             "file": "src/app/shared/services/auth.service.ts",
             "properties": [],
             "methods": [
@@ -435,7 +526,7 @@
                     "optional": false,
                     "returnType": "Observable<LogInResponse>",
                     "typeParameters": [],
-                    "line": 28,
+                    "line": 32,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -456,7 +547,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 50,
+                    "line": 54,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -465,7 +556,7 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Injectable } from '@angular/core';\nimport { Observable, of } from 'rxjs';\nimport { delay, tap } from 'rxjs/operators';\nimport { User } from '../types/user.type';\nimport { LogInResponse } from './auth.types';\nimport { UserService } from './user.service';\n\nexport interface LogInInput {\n  email: string;\n  password: string;\n}\n\nexport const accounts: Record<string, User> = {\n  'alan.sa@mjv.com.br': {\n    email: 'alan.sa@mjv.com.br',\n  },\n  'nathan.carlos@mjv.com.br': {\n    email: 'nathan.carlos@mjv.com.br',\n  },\n};\n\n@Injectable({\n  providedIn: 'root',\n})\nexport class AuthService {\n  constructor(private userService: UserService) {}\n\n  logIn(login: LogInInput): Observable<LogInResponse> {\n    const user = accounts[login.email];\n    const response: LogInResponse = user\n      ? {\n          success: true,\n          data: user,\n        }\n      : {\n          success: false,\n          errors: ['Usuário não encontrado.'],\n        };\n    return of(response).pipe(\n      delay(2000),\n      tap((response) => {\n        // if log in is successful, sets current user\n        if (response.success) {\n          this.userService.setCurrentUser(response.data);\n        }\n      })\n    );\n  }\n\n  logOut() {\n    this.userService.setCurrentUser(null);\n  }\n}\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\nimport { Observable, of } from 'rxjs';\nimport { delay, tap } from 'rxjs/operators';\nimport { User } from '../types/user.type';\nimport { LogInResponse } from './auth.types';\nimport { UserService } from './user.service';\n\nexport interface LogInInput {\n  email: string;\n  password: string;\n}\n\nexport const accounts: Record<string, User> = {\n  'alan.sa@mjv.com.br': {\n    email: 'alan.sa@mjv.com.br',\n    name: 'Alan Jhonnes',\n    dashboardSetting: ['progress', 'progress', 'table'],\n  },\n  'nathan.carlos@mjv.com.br': {\n    email: 'nathan.carlos@mjv.com.br',\n    name: 'Nathan Carlos',\n    dashboardSetting: ['table', 'table', 'progress'],\n  },\n};\n\n@Injectable({\n  providedIn: 'root',\n})\nexport class AuthService {\n  constructor(private userService: UserService) {}\n\n  logIn(login: LogInInput): Observable<LogInResponse> {\n    const user = accounts[login.email];\n    const response: LogInResponse = user\n      ? {\n          success: true,\n          data: user,\n        }\n      : {\n          success: false,\n          errors: ['Usuário não encontrado.'],\n        };\n    return of(response).pipe(\n      delay(2000),\n      tap((response) => {\n        // if log in is successful, sets current user\n        if (response.success) {\n          this.userService.setCurrentUser(response.data);\n        }\n      })\n    );\n  }\n\n  logOut() {\n    this.userService.setCurrentUser(null);\n  }\n}\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -479,7 +570,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 25,
+                "line": 29,
                 "jsdoctags": [
                     {
                         "name": "userService",
@@ -496,23 +587,36 @@
         },
         {
             "name": "ReportsService",
-            "id": "injectable-ReportsService-3fa3190cf474956b689312e6acc7fd2b",
+            "id": "injectable-ReportsService-651d8f84cfa91f66e0c67894175694a1",
             "file": "src/app/shared/services/reports.service.ts",
             "properties": [],
-            "methods": [],
+            "methods": [
+                {
+                    "name": "getProgressData",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Observable<ProgressData>",
+                    "typeParameters": [],
+                    "line": 47,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "getTableData",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Observable<TableData[]>",
+                    "typeParameters": [],
+                    "line": 43,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Injectable } from '@angular/core';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class ReportsService {\n\n  constructor() { }\n}\n",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 6
-            },
+            "sourceCode": "import { Injectable } from '@angular/core';\nimport { Observable, of } from 'rxjs';\nimport { delay } from 'rxjs/operators';\n\nexport const tableData: TableData[] = [\n  {\n    bool: true,\n    name: 'Alan',\n    rating: 5,\n  },\n  {\n    bool: true,\n    name: 'Nathan',\n    rating: 6,\n  },\n  {\n    bool: true,\n    name: 'Carlos',\n    rating: 7,\n  },\n];\n\nexport interface TableData {\n  name: string;\n  rating: number;\n  bool: boolean;\n}\n\nexport interface ProgressData {\n  primary: number;\n  secondary: number;\n}\n\nexport const progressData: ProgressData = {\n  primary: 100,\n  secondary: 50,\n};\n\n@Injectable({\n  providedIn: 'root',\n})\nexport class ReportsService {\n  getTableData(): Observable<TableData[]> {\n    return of(tableData).pipe(delay(2000));\n  }\n\n  getProgressData(): Observable<ProgressData> {\n    return of(progressData).pipe(delay(2000));\n  }\n}\n",
             "type": "injectable"
         },
         {
@@ -590,6 +694,48 @@
             "rawdescription": "\n",
             "sourceCode": "import { Injectable } from '@angular/core';\nimport { Observable } from 'rxjs';\nimport { BehaviorSubject } from 'rxjs';\nimport { User } from '../types/user.type';\n\n@Injectable({\n  providedIn: 'root',\n})\nexport class UserService {\n  readonly currentUserSubject = new BehaviorSubject<User | null>(null);\n\n  setCurrentUser(user: User | null): void {\n    this.currentUserSubject.next(user);\n  }\n\n  getCurrentUserStream(): Observable<User | null> {\n    return this.currentUserSubject.asObservable();\n  }\n\n  getCurrentUser(): User | null {\n    return this.currentUserSubject.getValue();\n  }\n}\n",
             "type": "injectable"
+        },
+        {
+            "name": "WidgetService",
+            "id": "injectable-WidgetService-c2c8da6cd9e9ec5fcf712ebdf4beac52",
+            "file": "src/app/features/dashboard/services/widget.service.ts",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "getWidgetType",
+                    "args": [
+                        {
+                            "name": "widget",
+                            "type": "WidgetTypes",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Constructor<WidgetType>",
+                    "typeParameters": [],
+                    "line": 20,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "widget",
+                            "type": "WidgetTypes",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\nimport { Constructor } from 'src/app/shared/mixins/constructor.type';\nimport { WidgetTypes } from 'src/app/shared/types/user.type';\nimport { ProgressReportComponent } from '../components/progress-report/progress-report.component';\nimport { TableReportComponent } from '../components/table-report/table-report.component';\nimport { WidgetType } from '../widget.type';\n\nexport const widgetTypeToWidgetComponent: Record<\n  WidgetTypes,\n  Constructor<WidgetType>\n> = {\n  progress: ProgressReportComponent,\n  table: TableReportComponent,\n};\n\n@Injectable({\n  providedIn: 'root',\n})\nexport class WidgetService {\n  getWidgetType(widget: WidgetTypes): Constructor<WidgetType> {\n    return widgetTypeToWidgetComponent[widget];\n  }\n}\n",
+            "type": "injectable"
         }
     ],
     "guards": [
@@ -664,12 +810,12 @@
     "directives": [
         {
             "name": "ContentTriggerDirective",
-            "id": "directive-ContentTriggerDirective-474eb4e408e5c6890e281a71e103d01f",
+            "id": "directive-ContentTriggerDirective-3efba65131320020b8ff5b4294ea83bf",
             "file": "src/app/shared/components/content-trigger/content-trigger.directive.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Directive, HostListener, Input } from '@angular/core';\r\nimport { ContentTriggerComponent } from './content-trigger.component';\r\n\r\n@Directive({\r\n  // eslint-disable-next-line @angular-eslint/directive-selector\r\n  selector: '[app-content-trigger]',\r\n})\r\nexport class ContentTriggerDirective<T = any> {\r\n  @Input()\r\n  customData: T | undefined = undefined;\r\n\r\n  @HostListener('click')\r\n  onClick(): void {\r\n    this.parent.triggerSomeEvent(this.customData);\r\n  }\r\n\r\n  constructor(private parent: ContentTriggerComponent) {}\r\n}\r\n",
+            "sourceCode": "import { Directive, HostListener, Input } from '@angular/core';\nimport { ContentTriggerComponent } from './content-trigger.component';\n\n@Directive({\n  // eslint-disable-next-line @angular-eslint/directive-selector\n  selector: '[app-content-trigger]',\n})\nexport class ContentTriggerDirective<T = any> {\n  @Input()\n  customData: T | undefined = undefined;\n\n  @HostListener('click')\n  onClick(): void {\n    this.parent.triggerSomeEvent(this.customData);\n  }\n\n  constructor(private parent: ContentTriggerComponent) {\n    console.log('trigger');\n  }\n}\n",
             "selector": "[app-content-trigger]",
             "providers": [],
             "inputsClass": [
@@ -817,7 +963,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ":host {\r\n  display: flex;\r\n  flex-direction: column;\r\n  flex-grow: 1;\r\n  flex-shrink: 0;\r\n  align-items: center;\r\n}\r\n",
+                    "data": ":host {\n  display: flex;\n  flex-direction: column;\n  flex-grow: 1;\n  flex-shrink: 0;\n  align-items: center;\n  width: 100%;\n}\n",
                     "styleUrl": "./app.component.scss"
                 }
             ],
@@ -1081,7 +1227,7 @@
         },
         {
             "name": "ContentTriggerComponent",
-            "id": "component-ContentTriggerComponent-82800a7b1085e7966ed1e11784f8eca6",
+            "id": "component-ContentTriggerComponent-be8cc8e0b17293f208438fe0ffd1f6bc",
             "file": "src/app/shared/components/content-trigger/content-trigger.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [
@@ -1102,7 +1248,23 @@
             "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "triggerDirective",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ContentTriggerComponent",
+                    "optional": true,
+                    "description": "",
+                    "line": 18,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "ContentTriggerDirective"
+                        }
+                    ]
+                }
+            ],
             "methodsClass": [
                 {
                     "name": "triggerSomeEvent",
@@ -1117,7 +1279,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 15,
+                    "line": 20,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -1140,7 +1302,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {\n  Component,\n  ViewEncapsulation,\n  ChangeDetectionStrategy,\n} from '@angular/core';\n\n@Component({\n  selector: 'app-content-trigger',\n  templateUrl: './content-trigger.component.html',\n  styleUrls: ['./content-trigger.component.scss'],\n  encapsulation: ViewEncapsulation.Emulated,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class ContentTriggerComponent<T = any> {\n  triggerSomeEvent(data: T): void {\n    console.log('triggered: ', data);\n  }\n}\n",
+            "sourceCode": "import {\n  Component,\n  ViewEncapsulation,\n  ChangeDetectionStrategy,\n  ViewChild,\n} from '@angular/core';\nimport { ContentTriggerDirective } from './content-trigger.directive';\n\n@Component({\n  selector: 'app-content-trigger',\n  templateUrl: './content-trigger.component.html',\n  styleUrls: ['./content-trigger.component.scss'],\n  encapsulation: ViewEncapsulation.Emulated,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class ContentTriggerComponent<T = any> {\n  @ViewChild(ContentTriggerDirective)\n  triggerDirective?: ContentTriggerComponent;\n\n  triggerSomeEvent(data: T): void {\n    console.log('triggered: ', data);\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1149,7 +1311,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<ng-content></ng-content>\n"
+            "templateData": "<ng-content></ng-content>\n\n<button apl-content-trigger [customData]=\"{ test: 'abc' }\">Outro trigger</button>\n"
         },
         {
             "name": "CustomTemplateComponent",
@@ -1219,7 +1381,7 @@
         },
         {
             "name": "DashboardComponent",
-            "id": "component-DashboardComponent-f00b033fb7efe1b641a7087b7deaa3ee",
+            "id": "component-DashboardComponent-3e79b907931bdc36f8a63417b54a3949",
             "file": "src/app/features/dashboard/pages/dashboard/dashboard.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1236,15 +1398,51 @@
             "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "container",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ViewContainerRef",
+                    "optional": false,
+                    "description": "",
+                    "line": 22,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'container', {read: ViewContainerRef}"
+                        }
+                    ]
+                },
+                {
+                    "name": "destroy$",
+                    "defaultValue": "new Subject<void>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 24
+                }
+            ],
             "methodsClass": [
                 {
-                    "name": "ngOnInit",
+                    "name": "ngAfterViewInit",
                     "args": [],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 8,
+                    "line": 34,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnDestroy",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 54,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -1256,19 +1454,106 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  templateUrl: './dashboard.component.html',\n  styleUrls: ['./dashboard.component.scss'],\n})\nexport class DashboardComponent implements OnInit {\n  ngOnInit(): void {\n    throw new Error('Method not implemented.');\n  }\n}\n",
+            "sourceCode": "import {\n  AfterViewInit,\n  Component,\n  ComponentFactoryResolver,\n  Injector,\n  OnDestroy,\n  ViewChild,\n  ViewContainerRef,\n} from '@angular/core';\nimport { Router } from '@angular/router';\nimport { Subject } from 'rxjs';\nimport { delay, takeUntil } from 'rxjs/operators';\nimport { UserService } from 'src/app/shared/services/user.service';\nimport { WidgetService } from '../../services/widget.service';\n\n@Component({\n  templateUrl: './dashboard.component.html',\n  styleUrls: ['./dashboard.component.scss'],\n})\nexport class DashboardComponent implements OnDestroy, AfterViewInit {\n  @ViewChild('container', { read: ViewContainerRef })\n  container!: ViewContainerRef;\n\n  destroy$ = new Subject<void>();\n\n  constructor(\n    private userService: UserService,\n    private componentFactoryResolver: ComponentFactoryResolver,\n    private injector: Injector,\n    private widgetService: WidgetService,\n    private router: Router\n  ) {}\n\n  ngAfterViewInit(): void {\n    this.userService\n      .getCurrentUserStream()\n      .pipe(delay(1), takeUntil(this.destroy$))\n      .subscribe((user) => {\n        if (!user) {\n          this.router.navigateByUrl('/login');\n        } else {\n          const widgets = user.dashboardSetting.map((widget) =>\n            this.widgetService.getWidgetType(widget)\n          );\n          widgets.forEach((widget) => {\n            const componentFactory =\n              this.componentFactoryResolver.resolveComponentFactory(widget);\n            this.container.createComponent(componentFactory);\n          });\n        }\n      });\n  }\n\n  ngOnDestroy(): void {\n    this.destroy$.next();\n    this.destroy$.complete();\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "",
+                    "data": ":host {\n  display: block;\n  flex-grow: 1;\n  width: 100%;\n}\n",
                     "styleUrl": "./dashboard.component.scss"
                 }
             ],
             "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "userService",
+                        "type": "UserService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "componentFactoryResolver",
+                        "type": "ComponentFactoryResolver",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "injector",
+                        "type": "Injector",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "widgetService",
+                        "type": "WidgetService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 24,
+                "jsdoctags": [
+                    {
+                        "name": "userService",
+                        "type": "UserService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "componentFactoryResolver",
+                        "type": "ComponentFactoryResolver",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "injector",
+                        "type": "Injector",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "widgetService",
+                        "type": "WidgetService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
             "implements": [
-                "OnInit"
+                "OnDestroy",
+                "AfterViewInit"
             ],
-            "templateData": "<p>dashboard works!</p>\n"
+            "templateData": "<div class=\"container-fluid d-flex align-items-center flex-wrap\">\n  <ng-container #container></ng-container>\n</div>\n"
         },
         {
             "name": "DynamicComponent",
@@ -1479,6 +1764,83 @@
             "stylesData": ""
         },
         {
+            "name": "LayoutComponent",
+            "id": "component-LayoutComponent-154b396ff56613f320b6be5801bcef7a",
+            "file": "src/app/features/layout/layout.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-layout",
+            "styleUrls": [
+                "./layout.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./layout.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "logOut",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { AuthService } from 'src/app/shared/services/auth.service';\n\n@Component({\n  selector: 'app-layout',\n  templateUrl: './layout.component.html',\n  styleUrls: ['./layout.component.scss'],\n})\nexport class LayoutComponent {\n  constructor(private authService: AuthService) {}\n\n  logOut(): void {\n    this.authService.logOut();\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\n  display: flex;\n  flex-direction: column;\n  flex-grow: 1;\n  flex-shrink: 0;\n  align-items: center;\n  width: 100%;\n}\n",
+                    "styleUrl": "./layout.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "authService",
+                        "type": "AuthService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 9,
+                "jsdoctags": [
+                    {
+                        "name": "authService",
+                        "type": "AuthService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "templateData": "\n<div  class=\"w-100\">\n  <button mat-raised-button (click)=\"logOut()\"> Log Out</button>\n</div>\n\n<router-outlet></router-outlet>\n"
+        },
+        {
             "name": "LoginFormComponent",
             "id": "component-LoginFormComponent-9d423c7c649ec9a082a10e815b180f75",
             "file": "src/app/features/login/components/login-form/login-form.component.ts",
@@ -1565,7 +1927,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<form [formGroup]=\"form\" class=\"container-fluid\" (submit)=\"onLogIn()\">\n  <div class=\"row\">\n    <mat-form-field class=\"col-6\">\n      <mat-label>Email</mat-label>\n      <input matInput placeholder=\"you@domain.com\" formControlName=\"email\" />\n    </mat-form-field>\n\n    <mat-form-field class=\"col-6\">\n      <mat-label>Senha</mat-label>\n      <input matInput placeholder=\"12345678\" formControlName=\"password\" />\n    </mat-form-field>\n  </div>\n\n  <div>\n    <button\n      mat-raised-button\n      color=\"primary\"\n      type=\"submit\"\n      class=\"w-100 d-flex align-items-center justify-content-center p-2\"\n      [disabled]=\"submitting\"\n    >\n      <ng-container *ngIf=\"!submitting; else submittingTemplate\">\n        Log In\n      </ng-container>\n    </button>\n  </div>\n\n  <ul *ngIf=\"errors.length\">\n    <li *ngFor=\"let error of errors\">\n      {{error}}\n    </li>\n  </ul>\n</form>\n\n<ng-template #submittingTemplate>\n  <mat-spinner mode=\"indeterminate\"></mat-spinner>\n</ng-template>\n"
+            "templateData": "<form [formGroup]=\"form\" class=\"container-fluid\" (submit)=\"onLogIn()\">\n  <div class=\"row\">\n    <mat-form-field class=\"col-6\">\n      <mat-label>Email</mat-label>\n      <input matInput placeholder=\"you@domain.com\" formControlName=\"email\" />\n    </mat-form-field>\n\n    <mat-form-field class=\"col-6\">\n      <mat-label>Senha</mat-label>\n      <input matInput placeholder=\"12345678\" formControlName=\"password\" />\n    </mat-form-field>\n  </div>\n\n  <div>\n    <button\n      mat-raised-button\n      color=\"primary\"\n      type=\"submit\"\n      class=\"w-100 d-flex align-items-center justify-content-center p-2\"\n      [disabled]=\"submitting\"\n    >\n      <ng-container *ngIf=\"!submitting; else submittingTemplate\">\n        Log In\n      </ng-container>\n    </button>\n  </div>\n\n  <ul *ngIf=\"errors.length\">\n    <li *ngFor=\"let error of errors\">\n      {{error}}\n    </li>\n  </ul>\n</form>\n\n<ng-template #submittingTemplate>\n  <mat-spinner mode=\"indeterminate\" class=\"button-spinner\"></mat-spinner>\n</ng-template>\n"
         },
         {
             "name": "LoginPageComponent",
@@ -1649,7 +2011,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ":host {\r\n  display: flex;\r\n  flex-direction: column;\r\n  flex-grow: 1;\r\n  flex-shrink: 0;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\n",
+                    "data": ":host {\n  display: flex;\n  flex-direction: column;\n  flex-grow: 1;\n  flex-shrink: 0;\n  align-items: center;\n  justify-content: center;\n}\n",
                     "styleUrl": "./login-page.component.scss"
                 }
             ],
@@ -1990,7 +2352,7 @@
         },
         {
             "name": "ProgressReportComponent",
-            "id": "component-ProgressReportComponent-f7ada801fc7576606672358edc1c7b67",
+            "id": "component-ProgressReportComponent-530952acbe2502d382e5c2c82d9ba35f",
             "file": "src/app/features/dashboard/components/progress-report/progress-report.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -2009,8 +2371,40 @@
             "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "loading",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 20
+                },
+                {
+                    "name": "values",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ProgressData | null",
+                    "optional": false,
+                    "description": "",
+                    "line": 21
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 28,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -2018,20 +2412,64 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, ChangeDetectionStrategy } from '@angular/core';\n\n@Component({\n  selector: 'app-progress-report',\n  templateUrl: './progress-report.component.html',\n  styleUrls: ['./progress-report.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class ProgressReportComponent {}\n",
+            "sourceCode": "import {\n  Component,\n  ChangeDetectionStrategy,\n  ChangeDetectorRef,\n  OnInit,\n} from '@angular/core';\nimport { finalize } from 'rxjs/operators';\nimport {\n  ProgressData,\n  ReportsService,\n} from 'src/app/shared/services/reports.service';\n\n@Component({\n  selector: 'app-progress-report',\n  templateUrl: './progress-report.component.html',\n  styleUrls: ['./progress-report.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class ProgressReportComponent implements OnInit {\n  loading = false;\n  values: ProgressData | null = null;\n\n  constructor(\n    private reportsService: ReportsService,\n    private changeDetectorRef: ChangeDetectorRef\n  ) {}\n\n  ngOnInit(): void {\n    this.loading = true;\n    this.reportsService\n      .getProgressData()\n      .pipe(\n        finalize(() => {\n          this.loading = false;\n        })\n      )\n      .subscribe({\n        next: (values) => {\n          this.values = values;\n          this.changeDetectorRef.markForCheck();\n        },\n      });\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "",
+                    "data": ":host {\n  display: block;\n  width: 200px;\n  border: 1px solid black;\n  padding: 15px;\n}\n\n.bar {\n  height: 30px;\n  display: flex;\n  align-items: center;\n}\n",
                     "styleUrl": "./progress-report.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<table>\n\n</table>\n"
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "reportsService",
+                        "type": "ReportsService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "changeDetectorRef",
+                        "type": "ChangeDetectorRef",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 21,
+                "jsdoctags": [
+                    {
+                        "name": "reportsService",
+                        "type": "ReportsService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "changeDetectorRef",
+                        "type": "ChangeDetectorRef",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "\n<ng-container *ngIf=\"!loading && values; else loadingTemplate\">\n  <h1>Progressos</h1>\n  <div class=\"bar\">\n    <mat-progress-bar mode=\"determinate\" [value]=\"values.primary\" color=\"primary\"></mat-progress-bar>\n  </div>\n  <div class=\"bar\">\n    <mat-progress-bar mode=\"determinate\" [value]=\"values.secondary\" color=\"secondary\"></mat-progress-bar>\n  </div>\n\n</ng-container>\n\n<ng-template #loadingTemplate>\n  <mat-spinner></mat-spinner>\n</ng-template>\n"
         },
         {
             "name": "PureComponentComponent",
-            "id": "component-PureComponentComponent-12f895605f237ab307f094bf2599136f",
+            "id": "component-PureComponentComponent-0a8d1af4044326757938bd61f2695f35",
             "file": "src/app/shared/components/pure-component/pure-component.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -2108,7 +2546,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {\n  Component,\n  OnInit,\n  ChangeDetectionStrategy,\n  Input,\n  Output,\n  EventEmitter,\n  ChangeDetectorRef,\n} from '@angular/core';\n\n@Component({\n  selector: 'app-pure-component',\n  template: `\n    <div>open: {{ open }}</div>\n    <div>count: {{ count }}</div>\n\n    <button (click)=\"triggerOutput()\">Trigger output</button>\n  `,\n  styleUrls: ['./pure-component.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class PureComponentComponent implements OnInit {\n  @Input()\n  open = false;\n\n  count = 0;\n\n  @Output()\n  buttonClicked = new EventEmitter<number>();\n\n  constructor(private changeDetectorRef: ChangeDetectorRef) {}\n\n  ngOnInit(): void {\n    setInterval(() => {\n      this.count += 1;\n      this.changeDetectorRef.markForCheck();\n    }, 100);\n  }\n\n  triggerOutput(): void {\n    this.buttonClicked.emit(this.count);\n  }\n}\n",
+            "sourceCode": "import {\n  Component,\n  OnInit,\n  ChangeDetectionStrategy,\n  Input,\n  Output,\n  EventEmitter,\n  ChangeDetectorRef,\n} from '@angular/core';\n\n@Component({\n  selector: 'app-pure-component',\n  template: `\n    <div>open: {{ open }}</div>\n    <div>count: {{ count }}</div>\n\n    <button (click)=\"triggerOutput()\">Trigger output</button>\n  `,\n  styleUrls: ['./pure-component.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class PureComponentComponent implements OnInit {\n  @Input()\n  open = false;\n\n  count = 0;\n\n  @Output()\n  buttonClicked = new EventEmitter<number>();\n\n  constructor(private changeDetectorRef: ChangeDetectorRef) {}\n\n  ngOnInit(): void {\n    setInterval(() => {\n      this.count += 1;\n      // this.changeDetectorRef.markForCheck();\n    }, 100);\n  }\n\n  triggerOutput(): void {\n    this.buttonClicked.emit(this.count);\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2200,7 +2638,7 @@
         },
         {
             "name": "TableReportComponent",
-            "id": "component-TableReportComponent-06652f06cad045bb737711fd4499c5b0",
+            "id": "component-TableReportComponent-4c181561bbbdee3989e3cfb1b233f047",
             "file": "src/app/features/dashboard/components/table-report/table-report.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -2219,7 +2657,38 @@
             "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "displayedColumns",
+                    "defaultValue": "['name', 'rating', 'bool']",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Array<TableData>",
+                    "optional": false,
+                    "description": "",
+                    "line": 23
+                },
+                {
+                    "name": "loading",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 20
+                },
+                {
+                    "name": "values",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TableData[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 21
+                }
+            ],
             "methodsClass": [
                 {
                     "name": "ngOnInit",
@@ -2227,7 +2696,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 13,
+                    "line": 29,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -2239,7 +2708,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';\n\n@Component({\n  selector: 'app-table-report',\n  templateUrl: './table-report.component.html',\n  styleUrls: ['./table-report.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush\n})\nexport class TableReportComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import {\n  Component,\n  OnInit,\n  ChangeDetectionStrategy,\n  ChangeDetectorRef,\n} from '@angular/core';\nimport { finalize } from 'rxjs/operators';\nimport {\n  ReportsService,\n  TableData,\n} from 'src/app/shared/services/reports.service';\n\n@Component({\n  selector: 'app-table-report',\n  templateUrl: './table-report.component.html',\n  styleUrls: ['./table-report.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class TableReportComponent implements OnInit {\n  loading = false;\n  values: TableData[] = [];\n\n  displayedColumns: Array<keyof TableData> = ['name', 'rating', 'bool'];\n  constructor(\n    private reportsService: ReportsService,\n    private changeDetectorRef: ChangeDetectorRef\n  ) {}\n\n  ngOnInit(): void {\n    this.loading = true;\n    this.reportsService\n      .getTableData()\n      .pipe(\n        finalize(() => {\n          this.loading = false;\n        })\n      )\n      .subscribe({\n        next: (values) => {\n          this.values = values;\n          this.changeDetectorRef.markForCheck();\n        },\n      });\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2253,13 +2722,46 @@
                 "description": "",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "args": [],
-                "line": 9
+                "args": [
+                    {
+                        "name": "reportsService",
+                        "type": "ReportsService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "changeDetectorRef",
+                        "type": "ChangeDetectorRef",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 23,
+                "jsdoctags": [
+                    {
+                        "name": "reportsService",
+                        "type": "ReportsService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "changeDetectorRef",
+                        "type": "ChangeDetectorRef",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<p>table-report works!</p>\n"
+            "templateData": "<table mat-table [dataSource]=\"values\" class=\"mat-elevation-z8\" *ngIf=\"!loading && values; else loadingTemplate\">\n\n  <ng-container matColumnDef=\"name\">\n    <th mat-header-cell *matHeaderCellDef> Name </th>\n    <td mat-cell *matCellDef=\"let element\"> {{element.name}} </td>\n  </ng-container>\n\n  <!-- Weight Column -->\n  <ng-container matColumnDef=\"rating\">\n    <th mat-header-cell *matHeaderCellDef> Rating </th>\n    <td mat-cell *matCellDef=\"let element\"> {{element.rating}} </td>\n  </ng-container>\n\n  <!-- Symbol Column -->\n  <ng-container matColumnDef=\"bool\">\n    <th mat-header-cell *matHeaderCellDef> Bool </th>\n    <td mat-cell *matCellDef=\"let element\"> {{element.bool}} </td>\n  </ng-container>\n\n  <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n  <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n</table>\n\n\n<ng-template #loadingTemplate>\n  <mat-spinner mode='indeterminate'></mat-spinner>\n</ng-template>\n"
         }
     ],
     "modules": [
@@ -2313,13 +2815,13 @@
         },
         {
             "name": "AppRoutingModule",
-            "id": "module-AppRoutingModule-3672d3143ec57831f9fa856a4a4feacc",
+            "id": "module-AppRoutingModule-6328e1702e4c0ec50f4a3000c30bd3df",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app-routing.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\nimport { AuthGuardService } from './shared/guard/auth-guard.service';\n\nconst routes: Routes = [\n  {\n    path: 'login',\n    loadChildren: () =>\n      \"import('./features/login/login.module').then((m) => m.LoginModule)\",\n  },\n  {\n    path: '',\n    canActivate: [AuthGuardService],\n    children: [\n      {\n        path: 'dashboard',\n        loadChildren: () =>\n          \"import('./features/dashboard/dashboard.module').then(\\\n            (m) => m.DashboardModule\\\n          )\",\n      },\n    ],\n  },\n  {\n    path: '**',\n    loadChildren: () =>\n      \"import('./features/not-found/not-found.module').then(\\\n        (m) => m.NotFoundModule\\\n      )\",\n  },\n];\n\n@NgModule({\n  imports: [RouterModule.forRoot(routes)],\n  exports: [RouterModule],\n})\nexport class AppRoutingModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\nimport { AuthGuardService } from './shared/guard/auth-guard.service';\n\nconst routes: Routes = [\n  {\n    path: 'login',\n    loadChildren: () =>\n      \"import('./features/login/login.module').then((m) => m.LoginModule)\",\n  },\n  {\n    path: '',\n    canActivate: [AuthGuardService],\n    children: [\n      {\n        path: '',\n        loadChildren: () =>\n          \"import('./features/layout/layout.module').then((m) => m.LayoutModule)\",\n      },\n    ],\n  },\n  {\n    path: '**',\n    loadChildren: () =>\n      \"import('./features/not-found/not-found.module').then(\\\n        (m) => m.NotFoundModule\\\n      )\",\n  },\n];\n\n@NgModule({\n  imports: [RouterModule.forRoot(routes)],\n  exports: [RouterModule],\n})\nexport class AppRoutingModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -2425,13 +2927,13 @@
         },
         {
             "name": "DashboardModule",
-            "id": "module-DashboardModule-a14e0e4262a4a0d31c5de885cc1f1b26",
+            "id": "module-DashboardModule-191c25f12091ce3eaf8c9bd15960a154",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/features/dashboard/dashboard.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { DashboardRoutingModule } from './dashboard-routing.module';\nimport { TableReportComponent } from './components/table-report/table-report.component';\nimport { ProgressReportComponent } from './components/progress-report/progress-report.component';\nimport { DashboardComponent } from './pages/dashboard/dashboard.component';\n\n@NgModule({\n  declarations: [\n    DashboardComponent,\n    TableReportComponent,\n    ProgressReportComponent,\n  ],\n  imports: [CommonModule, DashboardRoutingModule],\n})\nexport class DashboardModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\n\nimport { DashboardRoutingModule } from './dashboard-routing.module';\nimport { TableReportComponent } from './components/table-report/table-report.component';\nimport { ProgressReportComponent } from './components/progress-report/progress-report.component';\nimport { DashboardComponent } from './pages/dashboard/dashboard.component';\nimport { SharedModule } from 'src/app/shared/shared.module';\n\n@NgModule({\n  declarations: [\n    DashboardComponent,\n    TableReportComponent,\n    ProgressReportComponent,\n  ],\n  imports: [SharedModule, DashboardRoutingModule],\n})\nexport class DashboardModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -2456,6 +2958,9 @@
                     "elements": [
                         {
                             "name": "DashboardRoutingModule"
+                        },
+                        {
+                            "name": "SharedModule"
                         }
                     ]
                 },
@@ -2482,6 +2987,89 @@
             "file": "src/app/features/dashboard/dashboard-routing.module.ts",
             "methods": [],
             "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\nimport { DashboardComponent } from './pages/dashboard/dashboard.component';\n\nconst routes: Routes = [{ path: '', component: DashboardComponent }];\n\n@NgModule({\n  imports: [RouterModule.forChild(routes)],\n  exports: [RouterModule],\n})\nexport class DashboardRoutingModule {}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "LayoutModule",
+            "id": "module-LayoutModule-b59b6e09cf80526e5a2c9fe511c8abfe",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/features/layout/layout.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\n\nimport { LayoutRoutingModule } from './layout-routing.module';\nimport { LayoutComponent } from './layout.component';\nimport { SharedModule } from 'src/app/shared/shared.module';\n\n@NgModule({\n  declarations: [LayoutComponent],\n  imports: [SharedModule, LayoutRoutingModule],\n})\nexport class LayoutModule {}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "LayoutComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "LayoutRoutingModule"
+                        },
+                        {
+                            "name": "SharedModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "LayoutRoutingModule",
+            "id": "module-LayoutRoutingModule-1085453fd453153f2c37915377940bb2",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/features/layout/layout-routing.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\nimport { LayoutComponent } from './layout.component';\n\nconst routes: Routes = [\n  {\n    path: '',\n    component: LayoutComponent,\n    children: [\n      {\n        path: '',\n        loadChildren: () =>\n          \"import('../dashboard/dashboard.module').then(\\\n            (m) => m.DashboardModule\\\n          )\",\n      },\n    ],\n  },\n];\n\n@NgModule({\n  imports: [RouterModule.forChild(routes)],\n  exports: [RouterModule],\n})\nexport class LayoutRoutingModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -2597,13 +3185,13 @@
         },
         {
             "name": "NotFoundModule",
-            "id": "module-NotFoundModule-06f9d7784abc0d7c550d81e421c95e87",
+            "id": "module-NotFoundModule-6f5e97fb24932b62081599e7f6dc3674",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/features/not-found/not-found.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { NotFoundRoutingModule } from './not-found-routing.module';\nimport { NotFoundComponent } from './not-found.component';\n\n\n@NgModule({\n  declarations: [\n    NotFoundComponent\n  ],\n  imports: [\n    CommonModule,\n    NotFoundRoutingModule\n  ]\n})\nexport class NotFoundModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { NotFoundRoutingModule } from './not-found-routing.module';\nimport { NotFoundComponent } from './not-found.component';\nimport { SharedModule } from 'src/app/shared/shared.module';\n\n@NgModule({\n  declarations: [NotFoundComponent],\n  imports: [SharedModule, NotFoundRoutingModule],\n})\nexport class NotFoundModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -2622,6 +3210,9 @@
                     "elements": [
                         {
                             "name": "NotFoundRoutingModule"
+                        },
+                        {
+                            "name": "SharedModule"
                         }
                     ]
                 },
@@ -2677,13 +3268,13 @@
         },
         {
             "name": "SharedModule",
-            "id": "module-SharedModule-534a48319fb2bfe72090386bf5fa8b7a",
+            "id": "module-SharedModule-7689f2f6dbf463e82743f86c5ea15492",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/shared.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { MatButtonModule } from '@angular/material/button';\nimport { MatRadioModule } from '@angular/material/radio';\nimport { MatCheckboxModule } from '@angular/material/checkbox';\nimport { MatDialogModule } from '@angular/material/dialog';\nimport { MatFormFieldModule } from '@angular/material/form-field';\nimport { MatIconModule } from '@angular/material/icon';\nimport { MatInputModule } from '@angular/material/input';\nimport { MatMenuModule } from '@angular/material/menu';\nimport { MatProgressBarModule } from '@angular/material/progress-bar';\nimport { MatProgressSpinnerModule } from '@angular/material/progress-spinner';\nimport { MatSelectModule } from '@angular/material/select';\nimport { MatSidenavModule } from '@angular/material/sidenav';\nimport { MatTableModule } from '@angular/material/table';\nimport { MatTooltipModule } from '@angular/material/tooltip';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { RecursiveComponent } from './components/recursive/recursive.component';\nimport { PureComponentComponent } from './components/pure-component/pure-component.component';\nimport { PostComponent } from './components/post/post.component';\nimport { NgContentSimpleComponent } from './components/ng-content-simple/ng-content-simple.component';\nimport { NgContentSelectComponent } from './components/ng-content-select/ng-content-select.component';\nimport { DynamicComponent } from './components/dynamic/dynamic.component';\nimport { CustomTemplateComponent } from './components/custom-template/custom-template.component';\nimport { ContentTriggerComponent } from './components/content-trigger/content-trigger.component';\n\nconst sharedModules = [\n  CommonModule,\n  MatButtonModule,\n  MatRadioModule,\n  MatCheckboxModule,\n  MatDialogModule,\n  MatFormFieldModule,\n  MatIconModule,\n  MatInputModule,\n  MatMenuModule,\n  MatProgressBarModule,\n  MatProgressSpinnerModule,\n  MatSelectModule,\n  MatSidenavModule,\n  MatTableModule,\n  MatTooltipModule,\n  FormsModule,\n  ReactiveFormsModule,\n];\n\nexport const sharedComponents = [\n  RecursiveComponent,\n  PureComponentComponent,\n  PostComponent,\n  NgContentSimpleComponent,\n  NgContentSelectComponent,\n  DynamicComponent,\n  CustomTemplateComponent,\n  ContentTriggerComponent,\n];\n\n@NgModule({\n  declarations: [...sharedComponents],\n  imports: [...sharedModules],\n  exports: [...sharedModules, ...sharedComponents],\n})\nexport class SharedModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { MatButtonModule } from '@angular/material/button';\nimport { MatRadioModule } from '@angular/material/radio';\nimport { MatCheckboxModule } from '@angular/material/checkbox';\nimport { MatDialogModule } from '@angular/material/dialog';\nimport { MatFormFieldModule } from '@angular/material/form-field';\nimport { MatIconModule } from '@angular/material/icon';\nimport { MatInputModule } from '@angular/material/input';\nimport { MatMenuModule } from '@angular/material/menu';\nimport { MatProgressBarModule } from '@angular/material/progress-bar';\nimport { MatProgressSpinnerModule } from '@angular/material/progress-spinner';\nimport { MatSelectModule } from '@angular/material/select';\nimport { MatSidenavModule } from '@angular/material/sidenav';\nimport { MatTableModule } from '@angular/material/table';\nimport { MatTooltipModule } from '@angular/material/tooltip';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { RecursiveComponent } from './components/recursive/recursive.component';\nimport { PureComponentComponent } from './components/pure-component/pure-component.component';\nimport { PostComponent } from './components/post/post.component';\nimport { NgContentSimpleComponent } from './components/ng-content-simple/ng-content-simple.component';\nimport { NgContentSelectComponent } from './components/ng-content-select/ng-content-select.component';\nimport { DynamicComponent } from './components/dynamic/dynamic.component';\nimport { CustomTemplateComponent } from './components/custom-template/custom-template.component';\nimport { ContentTriggerComponent } from './components/content-trigger/content-trigger.component';\nimport { ContentTriggerDirective } from './components/content-trigger/content-trigger.directive';\n\nconst sharedModules = [\n  CommonModule,\n  MatButtonModule,\n  MatRadioModule,\n  MatCheckboxModule,\n  MatDialogModule,\n  MatFormFieldModule,\n  MatIconModule,\n  MatInputModule,\n  MatMenuModule,\n  MatProgressBarModule,\n  MatProgressSpinnerModule,\n  MatSelectModule,\n  MatSidenavModule,\n  MatTableModule,\n  MatTooltipModule,\n  FormsModule,\n  ReactiveFormsModule,\n];\n\nexport const sharedComponents = [\n  RecursiveComponent,\n  PureComponentComponent,\n  PostComponent,\n  NgContentSimpleComponent,\n  NgContentSelectComponent,\n  DynamicComponent,\n  CustomTemplateComponent,\n  ContentTriggerComponent,\n  ContentTriggerDirective,\n];\n\n@NgModule({\n  declarations: [...sharedComponents],\n  imports: [...sharedModules],\n  exports: [...sharedModules, ...sharedComponents],\n})\nexport class SharedModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -2694,6 +3285,9 @@
                     "elements": [
                         {
                             "name": "ContentTriggerComponent"
+                        },
+                        {
+                            "name": "ContentTriggerDirective"
                         },
                         {
                             "name": "CustomTemplateComponent"
@@ -2727,6 +3321,9 @@
                     "elements": [
                         {
                             "name": "ContentTriggerComponent"
+                        },
+                        {
+                            "name": "ContentTriggerDirective"
                         },
                         {
                             "name": "CustomTemplateComponent"
@@ -2772,23 +3369,13 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Record<string, User>",
-                "defaultValue": "{\n  'alan.sa@mjv.com.br': {\n    email: 'alan.sa@mjv.com.br',\n  },\n  'nathan.carlos@mjv.com.br': {\n    email: 'nathan.carlos@mjv.com.br',\n  },\n}"
+                "defaultValue": "{\n  'alan.sa@mjv.com.br': {\n    email: 'alan.sa@mjv.com.br',\n    name: 'Alan Jhonnes',\n    dashboardSetting: ['progress', 'progress', 'table'],\n  },\n  'nathan.carlos@mjv.com.br': {\n    email: 'nathan.carlos@mjv.com.br',\n    name: 'Nathan Carlos',\n    dashboardSetting: ['table', 'table', 'progress'],\n  },\n}"
             },
             {
                 "name": "Basic",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/shared/components/content-trigger/content-trigger.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Basic",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/shared/components/custom-template/custom-template.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -2818,7 +3405,7 @@
                 "name": "Basic",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/components/post/post.stories.ts",
+                "file": "src/app/shared/components/custom-template/custom-template.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -2829,6 +3416,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/shared/components/ng-content-simple/ng-content-simple.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Basic",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/components/post/post.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -2872,7 +3469,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "new InjectionToken<ComponentConfig>(\r\n  'component_config'\r\n)"
+                "defaultValue": "new InjectionToken<ComponentConfig>(\n  'component_config'\n)"
             },
             {
                 "name": "context",
@@ -2902,17 +3499,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "ComponentConfig",
-                "defaultValue": "{\r\n  color: 'red',\r\n  backgroundColor: 'black',\r\n  borderRadius: '1rem',\r\n}"
-            },
-            {
-                "name": "environment",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "object",
-                "defaultValue": "{\n  production: true,\n}"
+                "defaultValue": "{\n  color: 'red',\n  backgroundColor: 'black',\n  borderRadius: '1rem',\n}"
             },
             {
                 "name": "environment",
@@ -2923,6 +3510,16 @@
                 "deprecationMessage": "",
                 "type": "object",
                 "defaultValue": "{\n  production: false,\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.prod.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  production: true,\n}"
             },
             {
                 "name": "formFieldOptions",
@@ -2948,7 +3545,7 @@
                 "name": "LoggedIn",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Header.stories.ts",
+                "file": "src/stories/Page.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -2958,16 +3555,6 @@
                 "name": "LoggedIn",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Page.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "LoggedOut",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/Header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -2979,6 +3566,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Page.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "LoggedOut",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -3002,7 +3599,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Node",
-                "defaultValue": "{\r\n  id: '1',\r\n  children: [\r\n    {\r\n      id: '2',\r\n      children: [\r\n        {\r\n          id: '3',\r\n          children: [\r\n            {\r\n              id: '4',\r\n              children: [],\r\n            },\r\n          ],\r\n        },\r\n      ],\r\n    },\r\n    {\r\n      id: '5',\r\n      children: [\r\n        {\r\n          id: '6',\r\n          children: [],\r\n        },\r\n      ],\r\n    },\r\n  ],\r\n}"
+                "defaultValue": "{\n  id: '1',\n  children: [\n    {\n      id: '2',\n      children: [\n        {\n          id: '3',\n          children: [\n            {\n              id: '4',\n              children: [],\n            },\n          ],\n        },\n      ],\n    },\n    {\n      id: '5',\n      children: [\n        {\n          id: '6',\n          children: [],\n        },\n      ],\n    },\n  ],\n}"
             },
             {
                 "name": "Primary",
@@ -3013,6 +3610,16 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "progressData",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/services/reports.service.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "ProgressData",
+                "defaultValue": "{\n  primary: 100,\n  secondary: 50,\n}"
             },
             {
                 "name": "require",
@@ -3041,7 +3648,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "[]",
-                "defaultValue": "[\n  RecursiveComponent,\n  PureComponentComponent,\n  PostComponent,\n  NgContentSimpleComponent,\n  NgContentSelectComponent,\n  DynamicComponent,\n  CustomTemplateComponent,\n  ContentTriggerComponent,\n]"
+                "defaultValue": "[\n  RecursiveComponent,\n  PureComponentComponent,\n  PostComponent,\n  NgContentSimpleComponent,\n  NgContentSelectComponent,\n  DynamicComponent,\n  CustomTemplateComponent,\n  ContentTriggerComponent,\n  ContentTriggerDirective,\n]"
             },
             {
                 "name": "sharedModules",
@@ -3064,6 +3671,16 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "tableData",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/services/reports.service.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "TableData[]",
+                "defaultValue": "[\n  {\n    bool: true,\n    name: 'Alan',\n    rating: 5,\n  },\n  {\n    bool: true,\n    name: 'Nathan',\n    rating: 6,\n  },\n  {\n    bool: true,\n    name: 'Carlos',\n    rating: 7,\n  },\n]"
+            },
+            {
                 "name": "template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -3071,7 +3688,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<LoginFormComponent>",
-                "defaultValue": "(args: LoginFormComponent) => ({\r\n  props: args,\r\n})"
+                "defaultValue": "(args: LoginFormComponent) => ({\n  props: args,\n  moduleMetadata: {\n    imports: [LoginModule, SharedModule],\n  },\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Page.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Page>",
+                "defaultValue": "(args: Page) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -3097,31 +3724,11 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Page.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<Page>",
-                "defaultValue": "(args: Page) => ({\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/shared/components/content-trigger/content-trigger.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<ContentTriggerComponent>",
-                "defaultValue": "(\r\n  args: ContentTriggerComponent\r\n) => ({\r\n  props: args,\r\n  moduleMetadata: {\r\n    imports: [SharedModule],\r\n  },\r\n  template: `\r\n<app-content-trigger>\r\n  <button app-content-trigger [customData]=\"{ prop: 'some data' }\"> MY CUSTOM BUTTON</button>\r\n</app-content-trigger>\r\n`,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/shared/components/custom-template/custom-template.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<CustomTemplateComponent>",
-                "defaultValue": "(\r\n  args: CustomTemplateComponent\r\n) => ({\r\n  props: args,\r\n  moduleMetadata: {\r\n    imports: [SharedModule],\r\n  },\r\n  template: `\r\n  <app-custom-template\r\n  [title]=\"title\"\r\n  [subtitle]=\"subtitle\"\r\n  [template]=\"customTemplate\"\r\n>\r\n</app-custom-template>\r\n\r\n<ng-template #customTemplate\r\n  let-default\r\n  let-title=\"title\"\r\n  let-subtitle=\"subtitle\">\r\n  <h5>CUSTOM TEMPLATE</h5>\r\n\r\n  <p style=\"color: blue\">{{title}}</p>\r\n  <p style=\"color: red\">{{subtitle}}</p>\r\n  <p style=\"color: green\">{{default}}</p>\r\n</ng-template>\r\n`,\r\n})"
+                "defaultValue": "(\n  args: ContentTriggerComponent\n) => ({\n  props: args,\n  moduleMetadata: {\n    imports: [SharedModule],\n  },\n  template: `\n<app-content-trigger>\n  <button app-content-trigger [customData]=\"{ prop: 'some data' }\"> MY CUSTOM BUTTON</button>\n</app-content-trigger>\n`,\n})"
             },
             {
                 "name": "Template",
@@ -3131,7 +3738,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<DynamicComponent>",
-                "defaultValue": "(args: DynamicComponent) => ({\r\n  props: args,\r\n  moduleMetadata: {\r\n    imports: [SharedModule],\r\n  },\r\n  template: `\r\n<div>DYNAMIC COMPONENTS</div>\r\n<app-dynamic>\r\n</app-dynamic>\r\n`,\r\n})"
+                "defaultValue": "(args: DynamicComponent) => ({\n  props: args,\n  moduleMetadata: {\n    imports: [SharedModule],\n  },\n  template: `\n<div>DYNAMIC COMPONENTS</div>\n<app-dynamic>\n</app-dynamic>\n`,\n})"
             },
             {
                 "name": "Template",
@@ -3141,17 +3748,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<NgContentSelectComponent>",
-                "defaultValue": "(\r\n  args: NgContentSelectComponent\r\n) => ({\r\n  props: args,\r\n  moduleMetadata: {\r\n    imports: [SharedModule],\r\n  },\r\n  template: `\r\n<app-ng-content-select>\r\n  <div top-left>TOP LEFT</div>\r\n  <div top-right>TOP RIGHT</div>\r\n  <div bottom-left>BOTTOM LEFT</div>\r\n  <app-pure-component bottom-right></app-pure-component>\r\n</app-ng-content-select>\r\n`,\r\n})"
+                "defaultValue": "(\n  args: NgContentSelectComponent\n) => ({\n  props: args,\n  moduleMetadata: {\n    imports: [SharedModule],\n  },\n  template: `\n<app-ng-content-select>\n  <div top-left>TOP LEFT</div>\n  <div top-right>TOP RIGHT</div>\n  <div bottom-left>BOTTOM LEFT</div>\n  <app-pure-component bottom-right></app-pure-component>\n</app-ng-content-select>\n`,\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/components/post/post.stories.ts",
+                "file": "src/app/shared/components/custom-template/custom-template.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<PostComponent>",
-                "defaultValue": "(args: PostComponent) => ({\r\n  props: args,\r\n  moduleMetadata: {\r\n    imports: [SharedModule],\r\n  },\r\n  //   template: `\r\n  //   <app-post\r\n  //   [entityId]=\"entityId\"\r\n  //   [content]=\"content\"\r\n  //   [isLiked]=\"isLiked\"\r\n  //   [isClapped]=\"isClapped\"\r\n  //   [likes]=\"likes\"\r\n  //   [claps]=\"claps\"\r\n  //   (like)=\"like($event)\"\r\n  //   (unlike)=\"unlike($event)\"\r\n  //   (clap)=\"clap($event)\"\r\n  // ></app-post>\r\n  // `,\r\n})"
+                "type": "Story<CustomTemplateComponent>",
+                "defaultValue": "(\n  args: CustomTemplateComponent\n) => ({\n  props: args,\n  moduleMetadata: {\n    imports: [SharedModule],\n  },\n  template: `\n  <app-custom-template\n  [title]=\"title\"\n  [subtitle]=\"subtitle\"\n  [template]=\"customTemplate\"\n>\n</app-custom-template>\n\n<ng-template #customTemplate\n  let-default\n  let-title=\"title\"\n  let-subtitle=\"subtitle\">\n  <h5>CUSTOM TEMPLATE</h5>\n\n  <p style=\"color: blue\">{{title}}</p>\n  <p style=\"color: red\">{{subtitle}}</p>\n  <p style=\"color: green\">{{default}}</p>\n</ng-template>\n`,\n})"
             },
             {
                 "name": "Template",
@@ -3161,7 +3768,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<NgContentSimpleComponent>",
-                "defaultValue": "(\r\n  args: NgContentSimpleComponent\r\n) => ({\r\n  props: args,\r\n  moduleMetadata: {\r\n    imports: [SharedModule],\r\n  },\r\n  template: `\r\n<app-ng-content-simple>\r\n  <h1>My content</h1>\r\n  <app-pure-component></app-pure-component>\r\n</app-ng-content-simple>\r\n`,\r\n})"
+                "defaultValue": "(\n  args: NgContentSimpleComponent\n) => ({\n  props: args,\n  moduleMetadata: {\n    imports: [SharedModule],\n  },\n  template: `\n<app-ng-content-simple>\n  <h1>My content</h1>\n  <app-pure-component></app-pure-component>\n</app-ng-content-simple>\n`,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/components/post/post.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<PostComponent>",
+                "defaultValue": "(args: PostComponent) => ({\n  props: args,\n  moduleMetadata: {\n    imports: [SharedModule],\n  },\n  //   template: `\n  //   <app-post\n  //   [entityId]=\"entityId\"\n  //   [content]=\"content\"\n  //   [isLiked]=\"isLiked\"\n  //   [isClapped]=\"isClapped\"\n  //   [likes]=\"likes\"\n  //   [claps]=\"claps\"\n  //   (like)=\"like($event)\"\n  //   (unlike)=\"unlike($event)\"\n  //   (clap)=\"clap($event)\"\n  // ></app-post>\n  // `,\n})"
             },
             {
                 "name": "Template",
@@ -3171,7 +3788,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<PureComponentComponent>",
-                "defaultValue": "(\r\n  args: PureComponentComponent\r\n) => ({\r\n  props: args,\r\n  moduleMetadata: {\r\n    imports: [SharedModule],\r\n  },\r\n})"
+                "defaultValue": "(\n  args: PureComponentComponent\n) => ({\n  props: args,\n  moduleMetadata: {\n    imports: [SharedModule],\n  },\n})"
             },
             {
                 "name": "Template",
@@ -3181,7 +3798,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<RecursiveComponent>",
-                "defaultValue": "(args: RecursiveComponent) => ({\r\n  props: args,\r\n  moduleMetadata: {\r\n    imports: [SharedModule],\r\n  },\r\n  template: `\r\n  <app-recursive [node]=\"node\">\r\n  </app-recursive>\r\n`,\r\n})"
+                "defaultValue": "(args: RecursiveComponent) => ({\n  props: args,\n  moduleMetadata: {\n    imports: [SharedModule],\n  },\n  template: `\n  <app-recursive [node]=\"node\">\n  </app-recursive>\n`,\n})"
             },
             {
                 "name": "Template",
@@ -3191,7 +3808,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<ConfigurableComponent>",
-                "defaultValue": "(\r\n  args: ConfigurableComponent\r\n) => ({\r\n  props: args,\r\n  moduleMetadata: {\r\n    imports: [ConfigurableModule],\r\n    providers: [\r\n      {\r\n        provide: CONFIG_TOKEN,\r\n        useValue: {\r\n          backgroundColor: 'blue',\r\n          borderRadius: '40px',\r\n          color: 'white',\r\n        } as ComponentConfig,\r\n      },\r\n    ],\r\n  },\r\n  template: `\r\n  <app-configurable></app-configurable>\r\n  `,\r\n})"
+                "defaultValue": "(\n  args: ConfigurableComponent\n) => ({\n  props: args,\n  moduleMetadata: {\n    imports: [ConfigurableModule],\n    providers: [\n      {\n        provide: CONFIG_TOKEN,\n        useValue: {\n          backgroundColor: 'blue',\n          borderRadius: '40px',\n          color: 'white',\n        } as ComponentConfig,\n      },\n    ],\n  },\n  template: `\n  <app-configurable></app-configurable>\n  `,\n})"
+            },
+            {
+                "name": "widgetTypeToWidgetComponent",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/features/dashboard/services/widget.service.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Record<WidgetTypes, Constructor<WidgetType>>",
+                "defaultValue": "{\n  progress: ProgressReportComponent,\n  table: TableReportComponent,\n}"
             }
         ],
         "functions": [
@@ -3292,6 +3919,28 @@
                 "deprecationMessage": "",
                 "description": "",
                 "kind": 183
+            },
+            {
+                "name": "WidgetType",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "TableReportComponent | ProgressReportComponent",
+                "file": "src/app/features/dashboard/widget.type.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "WidgetTypes",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"table\" | \"progress\"",
+                "file": "src/app/shared/types/user.type.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
             }
         ],
         "enumerations": [],
@@ -3305,7 +3954,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Record<string, User>",
-                    "defaultValue": "{\n  'alan.sa@mjv.com.br': {\n    email: 'alan.sa@mjv.com.br',\n  },\n  'nathan.carlos@mjv.com.br': {\n    email: 'nathan.carlos@mjv.com.br',\n  },\n}"
+                    "defaultValue": "{\n  'alan.sa@mjv.com.br': {\n    email: 'alan.sa@mjv.com.br',\n    name: 'Alan Jhonnes',\n    dashboardSetting: ['progress', 'progress', 'table'],\n  },\n  'nathan.carlos@mjv.com.br': {\n    email: 'nathan.carlos@mjv.com.br',\n    name: 'Nathan Carlos',\n    dashboardSetting: ['table', 'table', 'progress'],\n  },\n}"
                 }
             ],
             "src/app/shared/components/content-trigger/content-trigger.stories.ts": [
@@ -3327,29 +3976,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<ContentTriggerComponent>",
-                    "defaultValue": "(\r\n  args: ContentTriggerComponent\r\n) => ({\r\n  props: args,\r\n  moduleMetadata: {\r\n    imports: [SharedModule],\r\n  },\r\n  template: `\r\n<app-content-trigger>\r\n  <button app-content-trigger [customData]=\"{ prop: 'some data' }\"> MY CUSTOM BUTTON</button>\r\n</app-content-trigger>\r\n`,\r\n})"
-                }
-            ],
-            "src/app/shared/components/custom-template/custom-template.stories.ts": [
-                {
-                    "name": "Basic",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/shared/components/custom-template/custom-template.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/shared/components/custom-template/custom-template.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<CustomTemplateComponent>",
-                    "defaultValue": "(\r\n  args: CustomTemplateComponent\r\n) => ({\r\n  props: args,\r\n  moduleMetadata: {\r\n    imports: [SharedModule],\r\n  },\r\n  template: `\r\n  <app-custom-template\r\n  [title]=\"title\"\r\n  [subtitle]=\"subtitle\"\r\n  [template]=\"customTemplate\"\r\n>\r\n</app-custom-template>\r\n\r\n<ng-template #customTemplate\r\n  let-default\r\n  let-title=\"title\"\r\n  let-subtitle=\"subtitle\">\r\n  <h5>CUSTOM TEMPLATE</h5>\r\n\r\n  <p style=\"color: blue\">{{title}}</p>\r\n  <p style=\"color: red\">{{subtitle}}</p>\r\n  <p style=\"color: green\">{{default}}</p>\r\n</ng-template>\r\n`,\r\n})"
+                    "defaultValue": "(\n  args: ContentTriggerComponent\n) => ({\n  props: args,\n  moduleMetadata: {\n    imports: [SharedModule],\n  },\n  template: `\n<app-content-trigger>\n  <button app-content-trigger [customData]=\"{ prop: 'some data' }\"> MY CUSTOM BUTTON</button>\n</app-content-trigger>\n`,\n})"
                 }
             ],
             "src/app/shared/components/dynamic/dynamic.stories.ts": [
@@ -3371,7 +3998,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<DynamicComponent>",
-                    "defaultValue": "(args: DynamicComponent) => ({\r\n  props: args,\r\n  moduleMetadata: {\r\n    imports: [SharedModule],\r\n  },\r\n  template: `\r\n<div>DYNAMIC COMPONENTS</div>\r\n<app-dynamic>\r\n</app-dynamic>\r\n`,\r\n})"
+                    "defaultValue": "(args: DynamicComponent) => ({\n  props: args,\n  moduleMetadata: {\n    imports: [SharedModule],\n  },\n  template: `\n<div>DYNAMIC COMPONENTS</div>\n<app-dynamic>\n</app-dynamic>\n`,\n})"
                 }
             ],
             "src/app/shared/components/ng-content-select/ng-content-select.stories.ts": [
@@ -3393,15 +4020,15 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<NgContentSelectComponent>",
-                    "defaultValue": "(\r\n  args: NgContentSelectComponent\r\n) => ({\r\n  props: args,\r\n  moduleMetadata: {\r\n    imports: [SharedModule],\r\n  },\r\n  template: `\r\n<app-ng-content-select>\r\n  <div top-left>TOP LEFT</div>\r\n  <div top-right>TOP RIGHT</div>\r\n  <div bottom-left>BOTTOM LEFT</div>\r\n  <app-pure-component bottom-right></app-pure-component>\r\n</app-ng-content-select>\r\n`,\r\n})"
+                    "defaultValue": "(\n  args: NgContentSelectComponent\n) => ({\n  props: args,\n  moduleMetadata: {\n    imports: [SharedModule],\n  },\n  template: `\n<app-ng-content-select>\n  <div top-left>TOP LEFT</div>\n  <div top-right>TOP RIGHT</div>\n  <div bottom-left>BOTTOM LEFT</div>\n  <app-pure-component bottom-right></app-pure-component>\n</app-ng-content-select>\n`,\n})"
                 }
             ],
-            "src/app/shared/components/post/post.stories.ts": [
+            "src/app/shared/components/custom-template/custom-template.stories.ts": [
                 {
                     "name": "Basic",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/shared/components/post/post.stories.ts",
+                    "file": "src/app/shared/components/custom-template/custom-template.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -3411,11 +4038,11 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/shared/components/post/post.stories.ts",
+                    "file": "src/app/shared/components/custom-template/custom-template.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Story<PostComponent>",
-                    "defaultValue": "(args: PostComponent) => ({\r\n  props: args,\r\n  moduleMetadata: {\r\n    imports: [SharedModule],\r\n  },\r\n  //   template: `\r\n  //   <app-post\r\n  //   [entityId]=\"entityId\"\r\n  //   [content]=\"content\"\r\n  //   [isLiked]=\"isLiked\"\r\n  //   [isClapped]=\"isClapped\"\r\n  //   [likes]=\"likes\"\r\n  //   [claps]=\"claps\"\r\n  //   (like)=\"like($event)\"\r\n  //   (unlike)=\"unlike($event)\"\r\n  //   (clap)=\"clap($event)\"\r\n  // ></app-post>\r\n  // `,\r\n})"
+                    "type": "Story<CustomTemplateComponent>",
+                    "defaultValue": "(\n  args: CustomTemplateComponent\n) => ({\n  props: args,\n  moduleMetadata: {\n    imports: [SharedModule],\n  },\n  template: `\n  <app-custom-template\n  [title]=\"title\"\n  [subtitle]=\"subtitle\"\n  [template]=\"customTemplate\"\n>\n</app-custom-template>\n\n<ng-template #customTemplate\n  let-default\n  let-title=\"title\"\n  let-subtitle=\"subtitle\">\n  <h5>CUSTOM TEMPLATE</h5>\n\n  <p style=\"color: blue\">{{title}}</p>\n  <p style=\"color: red\">{{subtitle}}</p>\n  <p style=\"color: green\">{{default}}</p>\n</ng-template>\n`,\n})"
                 }
             ],
             "src/app/shared/components/ng-content-simple/ng-content-simple.stories.ts": [
@@ -3437,7 +4064,29 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<NgContentSimpleComponent>",
-                    "defaultValue": "(\r\n  args: NgContentSimpleComponent\r\n) => ({\r\n  props: args,\r\n  moduleMetadata: {\r\n    imports: [SharedModule],\r\n  },\r\n  template: `\r\n<app-ng-content-simple>\r\n  <h1>My content</h1>\r\n  <app-pure-component></app-pure-component>\r\n</app-ng-content-simple>\r\n`,\r\n})"
+                    "defaultValue": "(\n  args: NgContentSimpleComponent\n) => ({\n  props: args,\n  moduleMetadata: {\n    imports: [SharedModule],\n  },\n  template: `\n<app-ng-content-simple>\n  <h1>My content</h1>\n  <app-pure-component></app-pure-component>\n</app-ng-content-simple>\n`,\n})"
+                }
+            ],
+            "src/app/shared/components/post/post.stories.ts": [
+                {
+                    "name": "Basic",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/components/post/post.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/components/post/post.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<PostComponent>",
+                    "defaultValue": "(args: PostComponent) => ({\n  props: args,\n  moduleMetadata: {\n    imports: [SharedModule],\n  },\n  //   template: `\n  //   <app-post\n  //   [entityId]=\"entityId\"\n  //   [content]=\"content\"\n  //   [isLiked]=\"isLiked\"\n  //   [isClapped]=\"isClapped\"\n  //   [likes]=\"likes\"\n  //   [claps]=\"claps\"\n  //   (like)=\"like($event)\"\n  //   (unlike)=\"unlike($event)\"\n  //   (clap)=\"clap($event)\"\n  // ></app-post>\n  // `,\n})"
                 }
             ],
             "src/app/shared/components/pure-component/pure-component.stories.ts": [
@@ -3459,7 +4108,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<PureComponentComponent>",
-                    "defaultValue": "(\r\n  args: PureComponentComponent\r\n) => ({\r\n  props: args,\r\n  moduleMetadata: {\r\n    imports: [SharedModule],\r\n  },\r\n})"
+                    "defaultValue": "(\n  args: PureComponentComponent\n) => ({\n  props: args,\n  moduleMetadata: {\n    imports: [SharedModule],\n  },\n})"
                 }
             ],
             "src/app/shared/components/recursive/recursive.stories.ts": [
@@ -3481,7 +4130,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Node",
-                    "defaultValue": "{\r\n  id: '1',\r\n  children: [\r\n    {\r\n      id: '2',\r\n      children: [\r\n        {\r\n          id: '3',\r\n          children: [\r\n            {\r\n              id: '4',\r\n              children: [],\r\n            },\r\n          ],\r\n        },\r\n      ],\r\n    },\r\n    {\r\n      id: '5',\r\n      children: [\r\n        {\r\n          id: '6',\r\n          children: [],\r\n        },\r\n      ],\r\n    },\r\n  ],\r\n}"
+                    "defaultValue": "{\n  id: '1',\n  children: [\n    {\n      id: '2',\n      children: [\n        {\n          id: '3',\n          children: [\n            {\n              id: '4',\n              children: [],\n            },\n          ],\n        },\n      ],\n    },\n    {\n      id: '5',\n      children: [\n        {\n          id: '6',\n          children: [],\n        },\n      ],\n    },\n  ],\n}"
                 },
                 {
                     "name": "Template",
@@ -3491,7 +4140,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<RecursiveComponent>",
-                    "defaultValue": "(args: RecursiveComponent) => ({\r\n  props: args,\r\n  moduleMetadata: {\r\n    imports: [SharedModule],\r\n  },\r\n  template: `\r\n  <app-recursive [node]=\"node\">\r\n  </app-recursive>\r\n`,\r\n})"
+                    "defaultValue": "(args: RecursiveComponent) => ({\n  props: args,\n  moduleMetadata: {\n    imports: [SharedModule],\n  },\n  template: `\n  <app-recursive [node]=\"node\">\n  </app-recursive>\n`,\n})"
                 }
             ],
             "src/app/shared/components/configurable/configurable/configurable.stories.ts": [
@@ -3513,7 +4162,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<ConfigurableComponent>",
-                    "defaultValue": "(\r\n  args: ConfigurableComponent\r\n) => ({\r\n  props: args,\r\n  moduleMetadata: {\r\n    imports: [ConfigurableModule],\r\n    providers: [\r\n      {\r\n        provide: CONFIG_TOKEN,\r\n        useValue: {\r\n          backgroundColor: 'blue',\r\n          borderRadius: '40px',\r\n          color: 'white',\r\n        } as ComponentConfig,\r\n      },\r\n    ],\r\n  },\r\n  template: `\r\n  <app-configurable></app-configurable>\r\n  `,\r\n})"
+                    "defaultValue": "(\n  args: ConfigurableComponent\n) => ({\n  props: args,\n  moduleMetadata: {\n    imports: [ConfigurableModule],\n    providers: [\n      {\n        provide: CONFIG_TOKEN,\n        useValue: {\n          backgroundColor: 'blue',\n          borderRadius: '40px',\n          color: 'white',\n        } as ComponentConfig,\n      },\n    ],\n  },\n  template: `\n  <app-configurable></app-configurable>\n  `,\n})"
                 }
             ],
             "src/app/shared/components/configurable/configuration.const.ts": [
@@ -3525,7 +4174,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "new InjectionToken<ComponentConfig>(\r\n  'component_config'\r\n)"
+                    "defaultValue": "new InjectionToken<ComponentConfig>(\n  'component_config'\n)"
                 },
                 {
                     "name": "DEFAULT_CONFIG",
@@ -3535,7 +4184,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "ComponentConfig",
-                    "defaultValue": "{\r\n  color: 'red',\r\n  backgroundColor: 'black',\r\n  borderRadius: '1rem',\r\n}"
+                    "defaultValue": "{\n  color: 'red',\n  backgroundColor: 'black',\n  borderRadius: '1rem',\n}"
                 }
             ],
             "src/test.ts": [
@@ -3578,19 +4227,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<LoginFormComponent>",
-                    "defaultValue": "(args: LoginFormComponent) => ({\r\n  props: args,\r\n})"
-                }
-            ],
-            "src/environments/environment.prod.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.prod.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "object",
-                    "defaultValue": "{\n  production: true,\n}"
+                    "defaultValue": "(args: LoginFormComponent) => ({\n  props: args,\n  moduleMetadata: {\n    imports: [LoginModule, SharedModule],\n  },\n})"
                 }
             ],
             "src/environments/environment.ts": [
@@ -3603,6 +4240,18 @@
                     "deprecationMessage": "",
                     "type": "object",
                     "defaultValue": "{\n  production: false,\n}"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  production: true,\n}"
                 }
             ],
             "src/app/app.module.ts": [
@@ -3669,38 +4318,6 @@
                     "defaultValue": "(args: Button) => ({\n  props: args,\n})"
                 }
             ],
-            "src/stories/Header.stories.ts": [
-                {
-                    "name": "LoggedIn",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "LoggedOut",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<Header>",
-                    "defaultValue": "(args: Header) => ({\n  props: args,\n})"
-                }
-            ],
             "src/stories/Page.stories.ts": [
                 {
                     "name": "LoggedIn",
@@ -3733,6 +4350,38 @@
                     "defaultValue": "(args: Page) => ({\n  props: args,\n})"
                 }
             ],
+            "src/stories/Header.stories.ts": [
+                {
+                    "name": "LoggedIn",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "LoggedOut",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<Header>",
+                    "defaultValue": "(args: Header) => ({\n  props: args,\n})"
+                }
+            ],
             "src/app/shared/components/post/post.component.ts": [
                 {
                     "name": "MixedBasePostComponent",
@@ -3745,6 +4394,28 @@
                     "defaultValue": "mixinClappable(mixinLikeable(PostComponentBase))"
                 }
             ],
+            "src/app/shared/services/reports.service.ts": [
+                {
+                    "name": "progressData",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/services/reports.service.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ProgressData",
+                    "defaultValue": "{\n  primary: 100,\n  secondary: 50,\n}"
+                },
+                {
+                    "name": "tableData",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/services/reports.service.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TableData[]",
+                    "defaultValue": "[\n  {\n    bool: true,\n    name: 'Alan',\n    rating: 5,\n  },\n  {\n    bool: true,\n    name: 'Nathan',\n    rating: 6,\n  },\n  {\n    bool: true,\n    name: 'Carlos',\n    rating: 7,\n  },\n]"
+                }
+            ],
             "src/app/shared/shared.module.ts": [
                 {
                     "name": "sharedComponents",
@@ -3754,7 +4425,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
-                    "defaultValue": "[\n  RecursiveComponent,\n  PureComponentComponent,\n  PostComponent,\n  NgContentSimpleComponent,\n  NgContentSelectComponent,\n  DynamicComponent,\n  CustomTemplateComponent,\n  ContentTriggerComponent,\n]"
+                    "defaultValue": "[\n  RecursiveComponent,\n  PureComponentComponent,\n  PostComponent,\n  NgContentSimpleComponent,\n  NgContentSelectComponent,\n  DynamicComponent,\n  CustomTemplateComponent,\n  ContentTriggerComponent,\n  ContentTriggerDirective,\n]"
                 },
                 {
                     "name": "sharedModules",
@@ -3765,6 +4436,18 @@
                     "deprecationMessage": "",
                     "type": "[]",
                     "defaultValue": "[\n  CommonModule,\n  MatButtonModule,\n  MatRadioModule,\n  MatCheckboxModule,\n  MatDialogModule,\n  MatFormFieldModule,\n  MatIconModule,\n  MatInputModule,\n  MatMenuModule,\n  MatProgressBarModule,\n  MatProgressSpinnerModule,\n  MatSelectModule,\n  MatSidenavModule,\n  MatTableModule,\n  MatTooltipModule,\n  FormsModule,\n  ReactiveFormsModule,\n]"
+                }
+            ],
+            "src/app/features/dashboard/services/widget.service.ts": [
+                {
+                    "name": "widgetTypeToWidgetComponent",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/features/dashboard/services/widget.service.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Record<WidgetTypes, Constructor<WidgetType>>",
+                    "defaultValue": "{\n  progress: ProgressReportComponent,\n  table: TableReportComponent,\n}"
                 }
             ]
         },
@@ -3879,6 +4562,32 @@
                     "description": "",
                     "kind": 183
                 }
+            ],
+            "src/app/features/dashboard/widget.type.ts": [
+                {
+                    "name": "WidgetType",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "TableReportComponent | ProgressReportComponent",
+                    "file": "src/app/features/dashboard/widget.type.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "src/app/shared/types/user.type.ts": [
+                {
+                    "name": "WidgetTypes",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"table\" | \"progress\"",
+                    "file": "src/app/shared/types/user.type.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
             ]
         }
     },
@@ -3923,26 +4632,52 @@
                         ],
                         "children": [
                             {
-                                "path": "dashboard",
-                                "loadChildren": "./features/dashboard/dashboard.module#DashboardModule",
+                                "path": "",
+                                "loadChildren": "./features/layout/layout.module#LayoutModule",
                                 "children": [
                                     {
                                         "kind": "module",
                                         "children": [
                                             {
                                                 "name": "routes",
-                                                "filename": "src/app/features/dashboard/dashboard-routing.module.ts",
-                                                "module": "DashboardRoutingModule",
+                                                "filename": "src/app/features/layout/layout-routing.module.ts",
+                                                "module": "LayoutRoutingModule",
                                                 "children": [
                                                     {
                                                         "path": "",
-                                                        "component": "DashboardComponent"
+                                                        "component": "LayoutComponent",
+                                                        "children": [
+                                                            {
+                                                                "path": "",
+                                                                "loadChildren": "../dashboard/dashboard.module#DashboardModule",
+                                                                "children": [
+                                                                    {
+                                                                        "kind": "module",
+                                                                        "children": [
+                                                                            {
+                                                                                "name": "routes",
+                                                                                "filename": "src/app/features/dashboard/dashboard-routing.module.ts",
+                                                                                "module": "DashboardRoutingModule",
+                                                                                "children": [
+                                                                                    {
+                                                                                        "path": "",
+                                                                                        "component": "DashboardComponent"
+                                                                                    }
+                                                                                ],
+                                                                                "kind": "module"
+                                                                            }
+                                                                        ],
+                                                                        "module": "DashboardModule"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
                                                     }
                                                 ],
                                                 "kind": "module"
                                             }
                                         ],
-                                        "module": "DashboardModule"
+                                        "module": "LayoutModule"
                                     }
                                 ]
                             }
@@ -3978,7 +4713,7 @@
         ]
     },
     "coverage": {
-        "count": 1,
+        "count": 0,
         "status": "low",
         "files": [
             {
@@ -4006,7 +4741,7 @@
                 "linktype": "component",
                 "name": "ProgressReportComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
@@ -4015,7 +4750,7 @@
                 "linktype": "component",
                 "name": "TableReportComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
@@ -4024,7 +4759,35 @@
                 "linktype": "component",
                 "name": "DashboardComponent",
                 "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/features/dashboard/services/widget.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "WidgetService",
+                "coveragePercent": 0,
                 "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/features/dashboard/services/widget.service.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "widgetTypeToWidgetComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/features/layout/layout.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "LayoutComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -4147,7 +4910,7 @@
                 "linktype": "component",
                 "name": "ContentTriggerComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/2",
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -4546,7 +5309,45 @@
                 "linktype": "injectable",
                 "name": "ReportsService",
                 "coveragePercent": 0,
-                "coverageCount": "0/2",
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/services/reports.service.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "ProgressData",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/services/reports.service.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "TableData",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/services/reports.service.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "progressData",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/services/reports.service.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "tableData",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -4584,7 +5385,7 @@
                 "linktype": "interface",
                 "name": "User",
                 "coveragePercent": 0,
-                "coverageCount": "0/2",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {

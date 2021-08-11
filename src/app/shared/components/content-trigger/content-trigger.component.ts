@@ -2,7 +2,10 @@ import {
   Component,
   ViewEncapsulation,
   ChangeDetectionStrategy,
+  ViewChild,
+  AfterViewInit,
 } from '@angular/core';
+import { ContentTriggerDirective } from './content-trigger.directive';
 
 @Component({
   selector: 'app-content-trigger',
@@ -11,8 +14,15 @@ import {
   encapsulation: ViewEncapsulation.Emulated,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ContentTriggerComponent<T = any> {
+export class ContentTriggerComponent<T = any> implements AfterViewInit {
+  @ViewChild(ContentTriggerDirective)
+  triggerDirective!: ContentTriggerDirective;
+
   triggerSomeEvent(data: T): void {
     console.log('triggered: ', data);
+  }
+
+  ngAfterViewInit() {
+    console.log(this.triggerDirective);
   }
 }

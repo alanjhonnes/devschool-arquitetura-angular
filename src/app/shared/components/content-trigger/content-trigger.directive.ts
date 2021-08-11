@@ -1,5 +1,5 @@
 import { Directive, HostListener, Input } from '@angular/core';
-import { ContentTriggerComponent } from './content-trigger.component';
+// import { ContentTriggerComponent } from './content-trigger.component';
 
 @Directive({
   // eslint-disable-next-line @angular-eslint/directive-selector
@@ -9,10 +9,12 @@ export class ContentTriggerDirective<T = any> {
   @Input()
   customData: T | undefined = undefined;
 
-  @HostListener('click')
-  onClick(): void {
-    this.parent.triggerSomeEvent(this.customData);
-  }
+  // @HostListener('click')
+  // onClick(): void {
+  //   this.parent.triggerSomeEvent(this.customData);
+  // }
 
-  constructor(private parent: ContentTriggerComponent) {}
+  // constructor(private parent: ContentTriggerComponent) {
+  //   console.log('trigger');
+  // }
 }
