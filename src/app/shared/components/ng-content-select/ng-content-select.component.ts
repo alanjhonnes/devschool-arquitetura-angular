@@ -36,7 +36,5 @@ export class NgContentSelectComponent implements AfterContentInit {
 
   constructor() {}
 
-  ngAfterContentInit(): void {
-    console.log(this.pureComponent.);
-  }
+  ngAfterContentInit(): void {}
 }

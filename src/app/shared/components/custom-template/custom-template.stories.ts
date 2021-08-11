@@ -19,7 +19,7 @@ const Template: Story<CustomTemplateComponent> = (
   <app-custom-template
   [title]="title"
   [subtitle]="subtitle"
-  [template]="customTemplate"
+
 >
 </app-custom-template>
 

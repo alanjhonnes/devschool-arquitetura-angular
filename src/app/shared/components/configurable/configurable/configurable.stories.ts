@@ -15,16 +15,16 @@ const Template: Story<ConfigurableComponent> = (
   props: args,
   moduleMetadata: {
     imports: [ConfigurableModule],
-    providers: [
-      {
-        provide: CONFIG_TOKEN,
-        useValue: {
-          backgroundColor: 'blue',
-          borderRadius: '40px',
-          color: 'white',
-        } as ComponentConfig,
-      },
-    ],
+    // providers: [
+    //   {
+    //     provide: CONFIG_TOKEN,
+    //     useValue: {
+    //       backgroundColor: 'blue',
+    //       borderRadius: '40px',
+    //       color: 'white',
+    //     } as ComponentConfig,
+    //   },
+    // ],
   },
   template: `
   <app-configurable></app-configurable>
