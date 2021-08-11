@@ -1,0 +1,12 @@
+:host {
+  display: block;
+  width: 200px;
+  border: 1px solid black;
+  padding: 15px;
+}
+
+.bar {
+  height: 30px;
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,15 @@
+
+<ng-container *ngIf="!loading && values; else loadingTemplate">
+  <h1>Progressos</h1>
+  <div class="bar">
+    <mat-progress-bar mode="determinate" [value]="values.primary" color="primary"></mat-progress-bar>
+  </div>
+  <div class="bar">
+    <mat-progress-bar mode="determinate" [value]="values.secondary" color="secondary"></mat-progress-bar>
+  </div>
+
+</ng-container>
+
+<ng-template #loadingTemplate>
+  <mat-spinner></mat-spinner>
+</ng-template>

@@ -1,0 +1,37 @@
+<form [formGroup]="form" class="container-fluid" (submit)="onLogIn()">
+  <div class="row">
+    <mat-form-field class="col-6">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="you@domain.com" formControlName="email" />
+    </mat-form-field>
+
+    <mat-form-field class="col-6">
+      <mat-label>Senha</mat-label>
+      <input matInput placeholder="12345678" formControlName="password" />
+    </mat-form-field>
+  </div>
+
+  <div>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      class="w-100 d-flex align-items-center justify-content-center p-2"
+      [disabled]="submitting"
+    >
+      <ng-container *ngIf="!submitting; else submittingTemplate">
+        Log In
+      </ng-container>
+    </button>
+  </div>
+
+  <ul *ngIf="errors.length">
+    <li *ngFor="let error of errors">
+      {{error}}
+    </li>
+  </ul>
+</form>
+
+<ng-template #submittingTemplate>
+  <mat-spinner mode="indeterminate" class="button-spinner"></mat-spinner>
+</ng-template>
