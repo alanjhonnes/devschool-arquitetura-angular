@@ -7,7 +7,7 @@ import { User } from '../types/user.type';
   providedIn: 'root',
 })
 export class UserService {
-  readonly currentUserSubject = new BehaviorSubject<User | null>(null);
+  private readonly currentUserSubject = new BehaviorSubject<User | null>(null);
 
   setCurrentUser(user: User | null): void {
     this.currentUserSubject.next(user);

@@ -20,11 +20,16 @@ export interface LoginForm {
 })
 export class LoginFormComponent {
   form: FormGroup = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.email]),
+    email: new FormControl('', [
+      Validators.required,
+      Validators.email,
+      validateEmailAlan,
+    ]),
     password: new FormControl('', [
       Validators.required,
       Validators.minLength(8),
     ]),
+    counter: new FormControl(10),
   });
 
   @Input() submitting = false;
@@ -38,4 +43,19 @@ export class LoginFormComponent {
       this.logIn.emit(this.form.value);
     }
   }
+}
+
+export function validateEmailAlan(
+  control: FormControl
+): null | { emailAlan: true } {
+  const value = control.value;
+  if (value === null || value === undefined || value === '') {
+    return null;
+  }
+  if (value === 'alan.sa@mjv.com.br') {
+    return null;
+  }
+  return {
+    emailAlan: true,
+  };
 }

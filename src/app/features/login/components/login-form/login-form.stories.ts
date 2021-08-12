@@ -11,7 +11,7 @@ export default {
 const template: Story<LoginFormComponent> = (args: LoginFormComponent) => ({
   props: args,
   moduleMetadata: {
-    imports: [LoginModule, SharedModule],
+    imports: [LoginModule],
   },
 });
 

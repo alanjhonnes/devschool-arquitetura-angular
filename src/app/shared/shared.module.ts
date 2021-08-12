@@ -24,6 +24,7 @@ import { DynamicComponent } from './components/dynamic/dynamic.component';
 import { CustomTemplateComponent } from './components/custom-template/custom-template.component';
 import { ContentTriggerComponent } from './components/content-trigger/content-trigger.component';
 import { ContentTriggerDirective } from './components/content-trigger/content-trigger.directive';
+import { CounterComponent } from './components/counter/counter.component';
 
 const sharedModules = [
   CommonModule,
@@ -55,6 +56,7 @@ export const sharedComponents = [
   CustomTemplateComponent,
   ContentTriggerComponent,
   ContentTriggerDirective,
+  CounterComponent,
 ];
 
 @NgModule({

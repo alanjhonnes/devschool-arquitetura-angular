@@ -1,27 +1,30 @@
-<table mat-table [dataSource]="values" class="mat-elevation-z8" *ngIf="!loading && values; else loadingTemplate">
-
+<table
+  mat-table
+  [dataSource]="values"
+  class="mat-elevation-z8"
+  *ngIf="!loading && values; else loadingTemplate"
+>
   <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef> Name </th>
-    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    <th mat-header-cell *matHeaderCellDef>Name</th>
+    <td mat-cell *matCellDef="let element">{{ element.name }}</td>
   </ng-container>
 
   <!-- Weight Column -->
   <ng-container matColumnDef="rating">
-    <th mat-header-cell *matHeaderCellDef> Rating </th>
-    <td mat-cell *matCellDef="let element"> {{element.rating}} </td>
+    <th mat-header-cell *matHeaderCellDef>Rating</th>
+    <td mat-cell *matCellDef="let element">{{ element.rating }}</td>
   </ng-container>
 
   <!-- Symbol Column -->
   <ng-container matColumnDef="bool">
-    <th mat-header-cell *matHeaderCellDef> Bool </th>
-    <td mat-cell *matCellDef="let element"> {{element.bool}} </td>
+    <th mat-header-cell *matHeaderCellDef>Bool</th>
+    <td mat-cell *matCellDef="let element">{{ element.bool }}</td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 </table>
 
-
 <ng-template #loadingTemplate>
-  <mat-spinner mode='indeterminate'></mat-spinner>
+  <mat-spinner mode="indeterminate"></mat-spinner>
 </ng-template>
